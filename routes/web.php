@@ -15,10 +15,6 @@ Route::get('/', function () {
 //     ];
 //     return view('Contact', ['names' => $name]);
 // });
-Route::get('/signboards', [SignageController::class, "index"]);
-Route::get('/signboards/{id}', function () {
-    return view('pages.id');
-}); 
-Route::get('/create', function () {
-    return view('pages.create');
-});
+Route::get('/signboards', [SignageController::class, "index"]) ->name('index');
+Route::get('/signboards/{id}',[SignageController::class, "show"])->name('show'); 
+Route::get('/create', [SignageController::class, "create"])->name('create');
