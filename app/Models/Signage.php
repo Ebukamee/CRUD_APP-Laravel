@@ -10,4 +10,8 @@ class Signage extends Model
     protected $fillable = ['name', 'shape', 'size', 'imagePath'];
     /** @use HasFactory<\Database\Factories\SignageFactory> */
     use HasFactory;
+
+    public function dojo() {
+        return $this->belongsTo(Dojo::class);
+    }
 }

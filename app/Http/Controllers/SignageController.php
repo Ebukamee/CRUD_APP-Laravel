@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class SignageController extends Controller
 {
     public function index() {
-        $signages = Signage::orderBy("created_at", "desc")->get();
+        $signages = Signage::orderBy("created_at", "desc")->paginate(10);
         return view('pages.home', ["signages" => $signages]);
     }
     public function show($id) {
