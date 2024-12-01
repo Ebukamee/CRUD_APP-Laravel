@@ -18,4 +18,15 @@ class SignageController extends Controller
     public function create() {
         return view("pages.create");
     }
+    public function store(Request $request) {
+        $validated = $request->validate([
+            'name' => 'required|string| max:20',
+            'shape' => 'required|string| max:20',
+            'size' => 'required|string| max:20',
+            'imagePath' => 'required|string| max:20',
+            'dojo_id' => 'required|exists:dojos,id'
+        ]);
+        Signage::create($validated);
+        return redirect()->route('index');
+    }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Signage extends Model
 {
-    protected $fillable = ['name', 'shape', 'size', 'imagePath'];
+    protected $fillable = ['name', 'shape', 'size', 'imagePath', 'dojo_id'];
     /** @use HasFactory<\Database\Factories\SignageFactory> */
     use HasFactory;
 

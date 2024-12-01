@@ -6,8 +6,13 @@
 </head>
 {{-- @vite('resources/css/app.css') --}}
 <body>
-    <form action="">
+    <form action="{{ route('store') }}" method='POST'>
+    @csrf
         <input type="text" id='name' name='name' required>
+        <input type="text" id='name' name='shape' required>
+        <input type="text" id='name' name='imagePath' required>
+        <input type="text" id='name' name='size' required>
+        <input type="text" id='name' name='dojo_id' required>
         <button>Submit</button>
     </form>
 </body>

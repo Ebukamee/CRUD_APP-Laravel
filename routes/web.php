@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('/signboards', [SignageController::class, "index"]) ->name('index');
 Route::get('/signboards/{id}',[SignageController::class, "show"])->name('show'); 
 Route::get('/create', [SignageController::class, "create"])->name('create');
+Route::post('/signboards', [SignageController::class, "store"])->name('store');
