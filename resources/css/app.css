@@ -5,7 +5,34 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:root {
+    --primary--black: black;
+    --white: transparent;
+    --secondary--yellow: #ffc600;
+    --muted--blue: #e5f1fe;
+    --primary--teal: #46e0d3;
+    --primary--royal: #0d41c0;
+    --primary--white: white;
+    --darkened--blue: #002265;
+    --black: black;
+    --secondary--red: #e40032;
+    --secondary--salmon: #ff8c91;
+    --muted--grey: #efefef;
+    --darkened--grey: #888b95;
+    --muted--salmon: #f2dadc;
+    --border-radius--small: 2rem;
+    --border-radius--extra-small: .875rem;
+    --border-radius--medium: 3rem;
+    --muted--yellow: #f7e8d1;
+    --muted--red: #efbbbb;
+    --border-radius--large: 4rem;
+    --muted--teal: #e7fffd;
+    --darkened--grey-alt: #d0d1db;
+    --darkened--teal: #00b2b1;
+    --darkened--yellow: #ec7500;
+    --darkened--red: #870c0c;
+    --darkened--salmon: #d04651;
+}
 
 a {
     text-decoration: none;

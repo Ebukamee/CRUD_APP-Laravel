@@ -1,4 +1,4 @@
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,5 +76,26 @@
     </div>
 </div>
 </x-hero>
+</body>
+</html> --}}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthRadar</title>
+</head>
+@vite('resources/css/app.css')
+<body>
+    <nav class="flex justify-between gap-4 m-5 p-5 mx-10">
+      <img src="/logo.png" alt="" class="w-20">
+      <div class='flex text-[#2563AE]'>
+            <p class='mx-2'>Home</p>
+            <p class='mx-2'>Hospitals</p>
+            <p class='mx-2'>Medications</p>
+            <p class='mx-2'>Create</p>
+
+</div>
+    </nav>
 </body>
 </html>
