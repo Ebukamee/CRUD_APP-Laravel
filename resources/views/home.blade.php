@@ -84,18 +84,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthRadar</title>
+    @vite('resources/css/app.css')
 </head>
-@vite('resources/css/app.css')
-<body>
-    <nav class="flex justify-between gap-4 m-5 p-5 mx-10">
-      <img src="/logo.png" alt="" class="w-20">
-      <div class='flex text-[#2563AE]'>
-            <p class='mx-2'>Home</p>
-            <p class='mx-2'>Hospitals</p>
-            <p class='mx-2'>Medications</p>
-            <p class='mx-2'>Create</p>
 
-</div>
-    </nav>
+<body>
+    
+    <x-layout>
+      <div class="bg-[#e5f1fe] m-5 p-5 rounded-xl">
+       Lol
+      </div>
+    </x-layout>
 </body>
 </html>

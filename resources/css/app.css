@@ -34,21 +34,13 @@
     --darkened--salmon: #d04651;
 }
 
-a {
+/* a {
     text-decoration: none;
     color: orange;
     font-family: 'Courier New', Courier, monospace;
-}
+} */
 html {
-    font-family: "Ubuntu", sans-serif;
-    color: hsl(208, 49%, 24%);
-}
-h1,h2,h3,h4,h5,h6 {
-    font-family: "Overpass", sans-serif;
-    font-weight: 600;
-}
-.p {
-    color: hsl(207, 13%, 34%);
+    font-family: "DM Sans", sans-serif;
 }
 .lightred {
     background-color:hsl(356,100%,66%) ;
