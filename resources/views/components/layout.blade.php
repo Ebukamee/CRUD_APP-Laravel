@@ -13,7 +13,7 @@
             <p class='m-2'>Home</p>
             <p class='m-2'>Hospitals</p>
             <p class='m-2'>Medications</p>
-            <p class='m-2'>Create</p>
+            <p class='m-2'>Create +</p>
 
 </div>
 <div class="col-span-2 text-black ">

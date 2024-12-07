@@ -90,8 +90,13 @@
 <body>
     
     <x-layout>
-      <div class="bg-[#e5f1fe] m-5 p-5 rounded-xl">
-       Lol
+      <div class="bg-[#e5f1fe] m-5 mx-10 pt-10 rounded-3xl text-center h-fit bg-cover bg-no-repeat" style="background-image: url('background.png');">
+       <h2 class="text-6xl font-semibold text-center">Everyone deserves quality healthcare.</h2>
+       <p class="text-center text-xl m-5">With HealthRadar, View Healthcare centers around you and browse through various medications. You can also Join us to create a comprehensive list and bring quality healthcare closer to home</p>
+        <button class="bg-[#46e0d3]  rounded-3xl p-2 px-10 border border-[#46e0d3] mx-5 m-10">Join Us</button>
+        <div class="w-full h-fit">
+          <img src="man.png" alt="" class="max-w-[600px] relative left-[600px]">
+        </div>
       </div>
     </x-layout>
 </body>
