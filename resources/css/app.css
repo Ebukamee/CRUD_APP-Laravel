@@ -45,8 +45,12 @@
  .hover {
     @apply hover:border-[#002265] transition hover:text-[#0d41c0] hover:bg-white hover:border-[2px];
  }
+ .input {
+    @apply p-3 border-[#efbbbb] border outline-none w-[90%] mx-auto rounded-3xl;
+ }
+ 
 .logo {
-    font-family: 'League Spartan', sans-serif ;
+    font-family: 'Quicksand', sans-serif ;
 }
 html {
     font-family: "DM Sans", sans-serif;

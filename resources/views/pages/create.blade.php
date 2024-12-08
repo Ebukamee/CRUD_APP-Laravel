@@ -6,7 +6,7 @@
 </head>
 @vite('resources/css/app.css')
 <body>
-    <form action="{{ route('store') }}" method='POST'>
+    {{-- <form action="{{ route('store') }}" method='POST'>
     @csrf
         <input type="text" id='name' name='name' value="{{ old('name') }}" required>
         <input type="text" id='name' name='shape' value="{{ old('shape') }}" required>
@@ -24,6 +24,11 @@
               @endforeach
             </ul>
         @endif
+    </form> --}}
+<x-layout>
+    <form action="" class="bg-[#efbbbb] m-auto my-10 w-[80%] max-w-[500px] p-5 rounded-3xl text-center">
+      <input type="text" class="input">
     </form>
+    </x-layout>
 </body>
 </html>

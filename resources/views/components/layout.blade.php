@@ -44,14 +44,50 @@
 
         </div>
     {{$slot}}
-<footer>
-  lol
+<footer class="grid lg:grid-cols-7 p-10  bg-[#002265] gap-20">
+  <div class="col-span-3">
+      <div class="mb-20">
+          <img src="/logo.png" alt="" class="w-20 col-span-1">
+          <h2 class="text-xl font-semibold logo mt-2 text-white">HealthRadar</h2>
+        </div>
+        <div>
+          <p class="text-lg text-white" id='copyright'></p>
+        </div>
+        <div class="flex justify-between">
+          <p class="text-lg text-white" >Policy</p>
+          <p class="text-lg text-white" >Privacy</p>
+          <p class="text-lg text-white" >Notice of Privacy</p>
+          <p class="text-lg text-white" >Terms of Service</p>
+        </div>
+  </div>
+  <div class="col-span-2">
+   <p class="text-lg text-white" >For Business</p>
+   <hr class="mt-5">
+   <p class="text-md text-white mb-2" >Lorem</p>
+   <p class="text-md text-white mb-2" >Ipsum</p>
+   <p class="text-md text-white mb-2" >Dolor sit amet</p>
+   <p class="text-md text-white mb-2" >Dolor</p>
+
+  </div>
+
+  <div class="col-span-2">
+   <p class="text-lg text-white" >About HealthRadar</p>
+   <hr class="mt-5">
+   <p class="text-md text-white mb-2" >Lorem</p>
+   <p class="text-md text-white mb-2" >Ipsum</p>
+   <p class="text-md text-white mb-2" >Dolor sit amet</p>
+   <p class="text-md text-white mb-2" >Dolor</p>
+
+  </div>
 </footer>
      <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const hamburgerIcon = document.getElementById('hamburger-icon');
         const closeIcon = document.getElementById('close-icon');
+        const currentYear = document.getElementById('copyright');
+        currentYear.textContent = `©${new Date().getFullYear()} Codedev. All Rights Reserved.`;
+
 
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
