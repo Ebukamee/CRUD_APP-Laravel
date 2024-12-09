@@ -9,7 +9,7 @@ class SignageController extends Controller
 {
     public function index() {
         $signages = Signage::orderBy("created_at", "desc")->paginate(10);
-        return view('pages.home', ["signages" => $signages]);
+        return view('pages.hospital', ["signages" => $signages]);
     }
     public function show($id) {
         $signboard = Signage::findOrFail($id);

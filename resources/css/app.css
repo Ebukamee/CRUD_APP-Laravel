@@ -48,7 +48,9 @@
  .input {
     @apply p-1 px-2 border-[#f7e8d1] bg-white border outline-none w-[90%] mx-auto rounded-3xl my-3;
  }
- 
+ .cardsection {
+    @apply bg-white shadow-md rounded-sm w-[300px] hover:w-[320px] p-5;
+ }
 .logo {
     font-family: 'Quicksand', sans-serif ;
 }
