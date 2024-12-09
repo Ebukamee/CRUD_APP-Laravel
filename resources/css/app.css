@@ -46,7 +46,7 @@
     @apply hover:border-[#002265] transition hover:text-[#0d41c0] hover:bg-white hover:border-[2px];
  }
  .input {
-    @apply p-3 border-[#efbbbb] border outline-none w-[90%] mx-auto rounded-3xl;
+    @apply p-1 px-2 border-[#f7e8d1] bg-white border outline-none w-[90%] mx-auto rounded-3xl my-3;
  }
  
 .logo {
@@ -63,4 +63,7 @@ html {
 }
 .footer {
     background-color: hsl(240, 10%, 16%);
+}
+label {
+    display:block;
 }

@@ -17,6 +17,7 @@ Route::get('/', function () {
 // });
 Route::get('/signboards', [SignageController::class, "index"]) ->name('index');
 Route::get('/signboards/{id}',[SignageController::class, "show"])->name('show'); 
-Route::get('/create', [SignageController::class, "create"])->name('create');
+Route::get('/add/hospital', [SignageController::class, "addhospitals"])->name('addhospitals');
+Route::get('/add/medication', [SignageController::class, "add-drug"])->name('add-drug');
 Route::post('/signboards', [SignageController::class, "store"])->name('store');
 Route::delete('/signboards/{id}', [SignageController::class, "destroy"])->name('destroy');

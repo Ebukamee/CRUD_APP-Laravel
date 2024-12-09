@@ -15,8 +15,8 @@ class SignageController extends Controller
         $signboard = Signage::findOrFail($id);
         return view('pages.id', ["signboard" => $signboard]);
     }
-    public function create() {
-        return view("pages.create");
+    public function addhospitals() {
+        return view("pages.addhospital");
     }
     public function store(Request $request) {
         $validated = $request->validate([

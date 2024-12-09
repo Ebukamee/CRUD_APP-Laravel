@@ -21,7 +21,7 @@
             <p class='m-2'>Create +</p>
 
         </div>
-        <div class="col-span-2 text-black  ">
+        <div class="col-span-2 text-black hidden lg:block">
             <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button>
             <button class="bg-[#46e0d3]  rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button>
         </div>
@@ -41,7 +41,10 @@
             <p class='m-2'>Hospitals</p>
             <p class='m-2'>Medications</p>
             <p class='m-2'>Create +</p>
-
+        <div>
+           <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button>
+            <button class="bg-[#46e0d3]  rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button>
+        </div>
         </div>
     {{$slot}}
 <footer class="grid lg:grid-cols-7 p-10  bg-[#002265] gap-20">
