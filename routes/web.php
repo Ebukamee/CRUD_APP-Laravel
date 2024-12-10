@@ -16,6 +16,8 @@ Route::get('/', function () {
 //     return view('Contact', ['names' => $name]);
 // });
 Route::get('/signboards', [SignageController::class, "index"]) ->name('index');
+Route::get('/hospital', [HospitalController::class, "index"]) ->name('index');
+Route::get('/hospital/{id}',[HospitalController::class, "show"])->name('show'); 
 Route::get('/signboards/{id}',[SignageController::class, "show"])->name('show'); 
 Route::get('/add/hospital', [SignageController::class, "addhospitals"])->name('addhospitals');
 Route::get('/add/medication', [SignageController::class, "addDrugs"])->name('addDrugs');

@@ -64,7 +64,7 @@
     <label for="name" class="text-[#888b95] text-sm m-2 ">
     Description
   </label>
-      <textarea  class="input h-40 p-5 rounded-lg" name="propritor" id='propritor' value="{{ old('propritor') }}" required placeholder="Description"></textarea>
+      <textarea  class="input h-40 p-5 rounded-lg" name="description" id='d' value="{{ old('propritor') }}" required placeholder="Description"></textarea>
     <label for="name" class="text-[#888b95] text-sm m-2 ">
     Image of Hospital
   </label>
