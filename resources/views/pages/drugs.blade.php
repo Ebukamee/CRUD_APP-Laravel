@@ -11,17 +11,17 @@
         <div class="m-5 p-5">
         <h1 class="text-4xl font-semibold text-center">Browse Medications</h1>
             <div class="flex justify-center gap-4 my-10 flex-wrap ">
-                @foreach($signages as $sign)
+                @foreach($drugs as $drug)
                 <div class="card" data-aos='zoom-in'>
-                  <img src="https://th.bing.com/th/id/OIP.r6l_zGBvXUqBYLbw55ruGwHaFj?rs=1&pid=ImgDetMain" alt="" class='rounded-sm'>
-                  <h2 class=" text-md font-semibold mt-5">{{ $sign -> name }}</h2>
+                  <img src="{{ $drug ->image }}" alt="" class='rounded-sm'>
+                  <h2 class=" text-md font-semibold mt-5">{{ $drug -> name }}</h2>
                   <div class="grid">
                     <button class="teal">View Details</button>
                   </div>
                 </div>
                 @endforeach
             </div>
-                {{ $signages->links() }}
+                {{ $drugs->links() }}
         </div>
 
         </div>
