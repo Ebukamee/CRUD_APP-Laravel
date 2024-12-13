@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             DojoSeeder::class,
             SignageSeeder::class,
             HospitalSeeder::class,
+            MedicationSeeder::class,
         ]);
     }
 }

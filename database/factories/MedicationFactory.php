@@ -19,14 +19,11 @@ class MedicationFactory extends Factory
         return [
             "name" => fake()->name(),
             "type" => fake()->randomElement(["Anti-Viral","Anti-Bacterial", "AntiBiotics", "Vaccines", "Anti-Fungal", "" ]),
-            "state" => fake()->state(),
-            "city" =>fake()->city(),
-            "address"=>fake()->streetAddress(),
-            "proprietor"=>fake()->randomElement(['Mission','Private', 'State Government', 'Federal Government', 'Local Government','Charity']),
-            "director"=>fake()->name(),
-            "description"=>fake()->realText(200),
+            "active" => fake()->realText(30),
+            "indication" =>fake()->randomElement(["Headache","Fever", "Stomach Ache", "Rashes", "Cough", "Cold" ]),
+            "manufacturer"=>fake()->streetAddress(),
+            "side"=>fake()->realText(30),
             "image"=>fake()->randomElement(['/man.png','/illustration-editor-desktop.svg','/illustration-editor-mobile.svg']),
-        ];
         ];
     }
 }
