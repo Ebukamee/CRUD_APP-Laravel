@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\hospital>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Medication>
  */
-class HospitalFactory extends Factory
+class MedicationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,8 @@ class HospitalFactory extends Factory
     public function definition(): array
     {
         return [
-            "name" => fake()->word(),
-            "type" => fake()->randomElement(["Teaching Hospital","General Hospital", "Clinic", "Specialized Hospital", "Medical Centre", "Primary HealthCare Center" ]),
+            "name" => fake()->name(),
+            "type" => fake()->randomElement(["Anti-Viral","Anti-Bacterial", "AntiBiotics", "Vaccines", "Anti-Fungal", "" ]),
             "state" => fake()->state(),
             "city" =>fake()->city(),
             "address"=>fake()->streetAddress(),
@@ -26,6 +26,7 @@ class HospitalFactory extends Factory
             "director"=>fake()->name(),
             "description"=>fake()->realText(200),
             "image"=>fake()->randomElement(['/man.png','/illustration-editor-desktop.svg','/illustration-editor-mobile.svg']),
+        ];
         ];
     }
 }

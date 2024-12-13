@@ -18,9 +18,6 @@ class HospitalController extends Controller
     public function addhospitals() {
         return view("pages.addhospital");
     }
-    // public function addDrugs() {
-    //     return view("pages.signup");
-    // }
     // public function store(Request $request) {
     //     $validated = $request->validate([
     //         'name' => 'required|string| max:20',
