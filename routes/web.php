@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignageController;
 use App\Http\Controllers\HospitalController;
-use App\Http\Controllers\MedController;
+use App\Http\Controllers\MedicationController;
 
 Route::get('/', function () {
     return view('home');
@@ -19,7 +19,7 @@ Route::get('/', function () {
 // });
 Route::get('/signboards', [SignageController::class, "index"]) ->name('index');
 Route::get('/hospital', [HospitalController::class, "index"]) ->name('index');
-Route::get('/medication', [MedController::class, "index"]) ->name('index');
+Route::get('/medication', [MedicationController::class, "index"]) ->name('index');
 Route::get('/hospital/{id}',[HospitalController::class, "show"])->name('show'); 
 Route::get('/signboards/{id}',[SignageController::class, "show"])->name('show'); 
 Route::get('/add/hospital', [SignageController::class, "addhospitals"])->name('addhospitals');
