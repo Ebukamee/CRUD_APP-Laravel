@@ -11,18 +11,18 @@
         <div class="m-5 p-5">
         <h1 class="text-4xl font-semibold text-center">Browse Health Institutions</h1>
             <div class="flex justify-center gap-4 my-10 flex-wrap ">
-                @foreach($signages as $sign)
+                @foreach($hospital as $h)
                 <div class="cardsection" data-aos='zoom-in'>
-                  <img src="https://th.bing.com/th/id/OIP.r6l_zGBvXUqBYLbw55ruGwHaFj?rs=1&pid=ImgDetMain" alt="" class='rounded-sm'>
-                  <h2 class=" text-md font-semibold my-5">{{ $sign -> name }}</h2>
+                  <img src="{{$h->image}}" alt="" class='rounded-sm'>
+                  <h2 class=" text-md font-semibold my-5">{{ $h -> name }}</h2>
                   <div class="grid">
-                    <p class="text-[#888b95] text-sm ">{{  $sign-> shape}}</p>
-                    <button class="teal">View Details</button>
+                    <p class="text-[#888b95] text-sm ">{{  $h->city}}, Nigeria</p>
+                    <button class="teal"><a href="/hospital/{{$h->id}}">View Details</a></button>
                   </div>
                 </div>
                 @endforeach
             </div>
-                {{ $signages->links() }}
+                {{ $hospital->links() }}
         </div>
 
         </div>

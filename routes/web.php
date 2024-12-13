@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignageController;
+use App\Http\Controllers\HospitalController;
 
 Route::get('/', function () {
     return view('home');

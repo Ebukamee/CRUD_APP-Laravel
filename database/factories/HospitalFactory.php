@@ -24,7 +24,8 @@ class HospitalFactory extends Factory
             "address"=>fake()->streetAddress(),
             "proprietor"=>fake()->randomElement(['Mission','Private', 'State Government', 'Federal Government', 'Local Government','Charity']),
             "director"=>fake()->name(),
-            "description"=>fake()->realText(20)
+            "description"=>fake()->realText(200),
+            "image"=>fake()->imageUrl(),
         ];
     }
 }
