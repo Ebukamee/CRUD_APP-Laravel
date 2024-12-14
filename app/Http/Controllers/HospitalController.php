@@ -18,17 +18,26 @@ class HospitalController extends Controller
     public function create() {
         return view("pages.hospital.add");
     }
-    // public function store(Request $request) {
-    //     $validated = $request->validate([
-    //         'name' => 'required|string| max:20',
-    //         'shape' => 'required|string| max:20',
-    //         'size' => 'required|string| max:20',
-    //         'imagePath' => 'required|string| max:20',
-    //         'dojo_id' => 'required|exists:dojos,id'
-    //     ]);
-    //     Signage::create($validated);
-    //     return redirect()->route('index');
-    // }
+    public function store(Request $request) {
+        $validated = $request->validate([
+            'name' => 'required|string',
+            'type' => 'required|string',
+            'state' => 'required|string',
+            'city' => 'required|string',
+            'address' => 'required|string',
+            'proprietor' => 'required|string',
+            'director' => 'required|string',
+            'description' => 'required|string',
+            'image' => 'required|mimes:jpg,png,jpeg,webp,jfif|max:3000',
+        ]);
+        if($request->has('image')) {
+            $imageName =time(). '.' .$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('uploads/images/',$imageName));
+            $validated['image'] =$imageName;
+        }
+        hospital::create($validated);
+        return redirect()->route('index');
+    }
 }
 
 
