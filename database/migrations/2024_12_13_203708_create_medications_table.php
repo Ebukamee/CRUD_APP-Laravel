@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('indication');
             $table->string('manufacturer');
             $table->text('side');
-            $table->string('image');
+            $table->string('image')->nullable();
         });
     }
 

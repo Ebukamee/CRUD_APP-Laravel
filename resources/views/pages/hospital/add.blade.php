@@ -12,55 +12,65 @@
             <div class="col-span-1">
                 <h2 class="text-4xl mb-10" data-aos="fade-down">Add Hospitals</h2>
                 <p class="text-sm" data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta error reprehenderit, doloremque ducimus in iusto mollitia voluptates maiores qui ipsa libero! Voluptas ea necessitatibus delectus ratione rerum soluta, earum doloribus.</p>
-           <img src="https://th.bing.com/th/id/OIP.r6l_zGBvXUqBYLbw55ruGwHaFj?rs=1&pid=ImgDetMain" alt="" class='rounded-xl mt-10' data-aos="zoom-in">
+                <img src="https://th.bing.com/th/id/OIP.r6l_zGBvXUqBYLbw55ruGwHaFj?rs=1&pid=ImgDetMain" alt="" class='rounded-xl mt-10' data-aos="zoom-in">
 
             </div>
-            <form action="{{ route('hospital.create')}}" method='POST'data-aos="zoom-in">
-            @csrf
-            @if($errors -> any()) {
-              @foreach($errors->all() as $err)
-                <p>{{$err}}</p>
-              @endforeach
-            }
-            @endif
-                <label for="name" class="text-[#888b95] text-sm m-2 ">
+            <form action="{{ route('hospital.create') }}" method="POST" enctype="multipart/form-data" data-aos="zoom-in">
+                @csrf
+                @if($errors->any())
+                @foreach($errors->all() as $err)
+                <p class="text-red-500">{{ $err }}</p>
+                @endforeach
+                @endif
+
+                <label for="name" class="text-[#888b95] text-sm m-2">
                     Name Of Hospital
                 </label>
-                <input type="text" class="input" name="name" id='name' value="{{ old('name') }}" required placeholder="Enter the name of the health institute">
-                <label for="name" class="text-[#888b95] text-sm m-2 ">
+                 <input type="text" class="input" name="name" id='name' value="{{ old('name') }}" required placeholder="Enter the name of the health institute">
+
+                <label for="type" class="text-[#888b95] text-sm m-2">
                     Type
                 </label>
-                <input type="Type" class="input" name="type" id='type' value="{{ old('type') }}" required>
-                <label for="name" class="text-[#888b95] text-sm m-2 ">
+                <input type="text" class="input" name="type" id="type" value="{{ old('type') }}" required>
+
+                <label for="state" class="text-[#888b95] text-sm m-2">
                     State
                 </label>
-                <input type="text" class="input" name="state" id='state' value="{{ old('state') }}" required>
-                <label for="name" class="text-[#888b95] text-sm m-2 ">
+                <input type="text" class="input" name="state" id="state" value="{{ old('state') }}" required>
+
+                <label for="city" class="text-[#888b95] text-sm m-2">
                     City/Town
                 </label>
-                <input type="text" class="input" name="city" id='city' value="{{ old('city') }}" required placeholder="Enter City of health institute ">
-                <label for="name" class="text-[#888b95] text-sm m-2 ">
+                <input type="text" class="input" name="city" id="city" value="{{ old('city') }}" required placeholder="Enter City of health institute">
+
+                <label for="address" class="text-[#888b95] text-sm m-2">
                     Location Address
                 </label>
-                <input type="text" class="input" name="address" id='address' value="{{ old('adsress') }}" required placeholder="Enter Address">
-                <label for="name" class="text-[#888b95] text-sm m-2 ">
+                <input type="text" class="input" name="address" id="address" value="{{ old('address') }}" required placeholder="Enter Address">
+
+                <label for="proprietor" class="text-[#888b95] text-sm m-2">
                     Proprietor
                 </label>
-                <input type="text" class="input" name="proprietor" id='propritor' value="{{ old('proprietor') }}" required>
-                <label for="name" class="text-[#888b95] text-sm m-2 ">
+                <input type="text" class="input" name="proprietor" id="proprietor" value="{{ old('proprietor') }}" required>
+
+                <label for="director" class="text-[#888b95] text-sm m-2">
                     MD/CEO
                 </label>
-                <input type="text" class="input" name="director" id='director' value="{{ old('director') }}" required placeholder="Enter the name of the Hospital Leader">
-                <label for="name" class="text-[#888b95] text-sm m-2 ">
+                <input type="text" class="input" name="director" id="director" value="{{ old('director') }}" required placeholder="Enter the name of the Hospital Leader">
+
+                <label for="description" class="text-[#888b95] text-sm m-2">
                     Description
                 </label>
-                <textarea class="input h-40 p-5 rounded-lg" name="description" id='d' value="{{ old('propritor') }}" required placeholder="Description"></textarea>
-                <label for="name" class="text-[#888b95] text-sm m-2 ">
+                <textarea class="input h-40 p-5 rounded-lg" name="description" id="description" required placeholder="Description">{{ old('description') }}</textarea>
+
+                <label for="image" class="text-[#888b95] text-sm m-2">
                     Image of Hospital
                 </label>
-                <input type="file" class="input" name="image" id='image' value="{{ old('image') }}" required>
+                <input type="file" class="input" name="image" id="image" required>
+
                 <button class="teal">Submit</button>
             </form>
+
         </div>
 
         <div class="bg-no-repeat bg-cover w-[100%] h-[500px]" style="background-image:url('/pink-bg.png');"></div>

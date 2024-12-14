@@ -32,11 +32,11 @@ class HospitalController extends Controller
         ]);
         if($request->has('image')) {
             $imageName =time(). '.' .$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('uploads/images/',$imageName));
+            $request->image->move(public_path('uploads/images/'),$imageName);
             $validated['image'] =$imageName;
         }
         hospital::create($validated);
-        return redirect()->route('index');
+        return redirect()->route('hospital.index');
     }
 }
 
