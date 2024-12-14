@@ -13,7 +13,7 @@
             <div class="flex justify-center gap-4 my-10 flex-wrap ">
                 @foreach($drugs as $drug)
                 <div class="card" data-aos='zoom-in'>
-                  <img src="{{ $drug ->image }}" alt="" class='rounded-sm'>
+                  <img src="{{asset('uploads/images/'. $drug->image)}}" alt="" class='rounded-sm'>
                   <h2 class=" text-md font-semibold mt-5">{{ $drug -> name }}</h2>
                   <div class="grid">
                     <button class="teal">View Details</button>

@@ -13,6 +13,7 @@
                 <p class="text-sm" data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta error reprehenderit, doloremque ducimus in iusto mollitia voluptates maiores qui ipsa libero! Voluptas ea necessitatibus delectus ratione rerum soluta, earum doloribus.</p>
             </div>
             <form action="{{route('medication.create')}}" method="POST" enctype="multipart/form-data" data-aos="zoom-in">
+            @csrf
                 <label for="name" class="text-[#888b95] text-sm m-2 ">
                     Name Of Drug
                 </label>

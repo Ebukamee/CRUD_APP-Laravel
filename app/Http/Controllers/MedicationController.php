@@ -25,7 +25,7 @@ class MedicationController extends Controller
             'active' => 'required|string',
             'indication' => 'required|string',
             'manufacturer' => 'required|string',
-            'side' => 'required|string'
+            'side' => 'required|string',
             'image' => 'required|mimes:jpg,png,jpeg,jfif'
         ]);
         if($request ->has('image')) {
