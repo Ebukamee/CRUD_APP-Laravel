@@ -19,14 +19,14 @@
                 @csrf
                 @if($errors->any())
                 @foreach($errors->all() as $err)
-                <p class="text-red-500">{{ $err }}</p>
+                <p class="text-red text-500">{{ $err }}</p>
                 @endforeach
                 @endif
 
                 <label for="name" class="text-[#888b95] text-sm m-2">
                     Name Of Hospital
                 </label>
-                 <input type="text" class="input" name="name" id='name' value="{{ old('name') }}" required placeholder="Enter the name of the health institute">
+                <input type="text" class="input" name="name" id='name' value="{{ old('name') }}" required placeholder="Enter the name of the health institute">
 
                 <label for="type" class="text-[#888b95] text-sm m-2">
                     Type
@@ -62,7 +62,10 @@
                     Description
                 </label>
                 <textarea class="input h-40 p-5 rounded-lg" name="description" id="description" required placeholder="Description">{{ old('description') }}</textarea>
-
+                <label for="image" class="text-[#888b95] text-sm m-2">
+                    Google Map Link
+                </label>
+                <input type="url" class="input" name="url" id="url" placeholder="Add Google Map" required>
                 <label for="image" class="text-[#888b95] text-sm m-2">
                     Image of Hospital
                 </label>

@@ -20,13 +20,20 @@ class MedicationController extends Controller
     }
     public function store(Request $request) {
         $validated = $request->validate([
-            'name' => 'required|string| max:20',
-            'shape' => 'required|string| max:20',
-            'size' => 'required|string| max:20',
-            'imagePath' => 'required|string| max:20',
-            'dojo_id' => 'required|exists:dojos,id'
+            'name' => 'required|string',
+            'type' => 'required|string',
+            'active' => 'required|string',
+            'indication' => 'required|string',
+            'manufacturer' => 'required|string',
+            'side' => 'required|string'
+            'image' => 'required|mimes:jpg,png,jpeg,jfif'
         ]);
-        Signage::create($validated);
-        return redirect()->route('index');
+        if($request ->has('image')) {
+            $imageName =time(). '.' .$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('uploads/images/'),$imageName);
+            $validated['image'] =$imageName;
+        }
+        medication::create($validated);
+        return redirect()->route('medication.index')->with('success', 'Medication added successfully!');
     }
 }

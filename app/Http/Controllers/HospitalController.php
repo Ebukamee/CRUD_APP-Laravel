@@ -36,7 +36,7 @@ class HospitalController extends Controller
             $validated['image'] =$imageName;
         }
         hospital::create($validated);
-        return redirect()->route('hospital.index');
+        return redirect()->route('hospital.index')->with('success', 'Hospital added successfully!');
     }
 }
 
