@@ -39,8 +39,11 @@
     color: orange;
     font-family: 'Courier New', Courier, monospace;
 } */
+ .red {
+    @apply  transition bg-[#870c0c]  rounded-3xl p-2 px-8 border border-[#870c0c] mx-0 m-10 font-medium text-white hover:text-[#870c0c] hover:bg-white hover:border-[2px];
+ }
  .teal {
-    @apply hover:border-[#002265] transition bg-[#46e0d3]  rounded-3xl p-2 px-8 border border-[#46e0d3] mx-0 m-10 font-medium hover:text-[#0d41c0] hover:bg-white hover:border-[2px];
+    @apply  hover:border-[#002265] transition bg-[#46e0d3]  rounded-3xl p-2 px-8 border border-[#46e0d3] mx-0 m-10 font-medium hover:text-[#0d41c0] hover:bg-white hover:border-[2px];
  }
  .hover {
     @apply hover:border-[#002265] transition hover:text-[#0d41c0] hover:bg-white hover:border-[2px];

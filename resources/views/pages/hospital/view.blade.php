@@ -13,7 +13,7 @@
             <div class="flex justify-center gap-4 my-10 flex-wrap ">
                 @foreach($hospital as $h)
                 <div class="cardsection" data-aos='zoom-in'>
-                  <img src="{{$h->image}}" alt="" class='rounded-sm'>
+                  <img src="{{asset('uploads/images/'. $h->image)}}" alt="" class='rounded-sm'>
                   <h2 class=" text-md font-semibold my-5">{{ $h -> name }}</h2>
                   <div class="grid">
                     <p class="text-[#888b95] text-sm ">{{  $h->city}}, Nigeria</p>

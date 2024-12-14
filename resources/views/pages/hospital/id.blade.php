@@ -13,8 +13,9 @@
         </h2>
         <div class="bg-[#e5f1fe] m-10 pt-10 pb-10 px-8 rounded-3xl text-center h-fit bg-cover bg-no-repeat shadow-lg flex gap-10 justify-between flex-col lg:flex-row" style="background-image: url('/wws.svg');">
             <!-- Profile Image -->
-            <img src="{{ $hospital -> image }}" alt="Profile Image" class="w-[80%] lg:w-[50%] m-auto rounded-md mb-5 shadow-md">
-
+            <div class="w-[80%] lg:w-[50%] m-auto">
+                <img src="{{asset('uploads/images/'. $hospital->image)}}" alt="Profile Image" class="w-[100%] rounded-md mb-5 shadow-md ">
+            </div>
             <div class="shadow-lg lg:w-[50%] p-5 rounded-xl">
                 {{-- <h2 class="text-3xl font-semibold text-center mb-4 text-gray-800" data-aos="flip-left">
                     {{ $hospital->name }}
@@ -51,6 +52,10 @@
                 <div class="flex justify-center items-center space-x-2">
                     <i class="fas fa-user-circle text-blue-500"></i>
                     <span class="text-gray-700 font-medium">Proprietor: {{$hospital -> proprietor}}</span>
+                </div>
+                <div class="flex justify-between mt-10">
+                    <button class="teal">Edit</button>
+                    <button class="red">Delete</button>
                 </div>
             </div>
         </div>
