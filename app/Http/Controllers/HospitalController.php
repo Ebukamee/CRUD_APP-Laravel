@@ -8,15 +8,15 @@ use Illuminate\Http\Request;
 class HospitalController extends Controller
 {
     public function index() {
-        $signages = hospital::orderBy("created_at", "desc")->paginate(12);
-        return view('pages.hospital', ["hospital" => $signages]);
+        $data = hospital::orderBy("created_at", "desc")->paginate(12);
+        return view('pages.hospital.view', ["hospital" => $data]);
     }
     public function show($id) {
-        $signboard = hospital::findOrFail($id);
-        return view('pages.id', ["hospital" => $signboard]);
+        $data = hospital::findOrFail($id);
+        return view('pages.hospital.id', ["hospital" => $data]);
     }
-    public function addhospitals() {
-        return view("pages.addhospital");
+    public function create() {
+        return view("pages.hospital.add");
     }
     // public function store(Request $request) {
     //     $validated = $request->validate([

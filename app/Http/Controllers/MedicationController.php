@@ -8,7 +8,14 @@ use Illuminate\Http\Request;
 class MedicationController extends Controller
 {
     public function index() {
-        $signages = medication::orderBy("created_at", "desc")->paginate(12);
-        return view('pages.drugs', ["drugs" => $signages]);
+        $data = medication::orderBy("created_at", "desc")->paginate(12);
+        return view('pages.medication.view', ["drugs" => $data]);
+    }
+    public function show($id) {
+        $data = medication::findOrFail($id);
+        return view('pages.medication.id', ["drugs" => $data]);
+    }
+    public function create() {
+        return view("pages.medication.add");
     }
 }
