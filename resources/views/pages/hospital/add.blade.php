@@ -8,6 +8,13 @@
 @vite('resources/css/app.css')
 <body>
     <x-layout>
+     @if($errors->any())
+                <ul class="p-4 bg-red-100 m-auto w-[80%] max-w-[800px] rounded">
+                @foreach($errors->all() as $err)
+                <p class="my-2 text-red-500">{{ $err }}</p>
+                @endforeach
+                </ul>
+                @endif
         <div class="bg-[#f7e8d1] m-auto my-10 w-[80%] max-w-[800px] p-10 rounded-3xl  grid lg:grid-cols-2 gap-10">
             <div class="col-span-1">
                 <h2 class="text-4xl mb-10" data-aos="fade-down">Add Hospitals</h2>
@@ -17,11 +24,6 @@
             </div>
             <form action="{{ route('hospital.create') }}" method="POST" enctype="multipart/form-data" data-aos="zoom-in">
                 @csrf
-                @if($errors->any())
-                @foreach($errors->all() as $err)
-                <p class="text-red text-500">{{ $err }}</p>
-                @endforeach
-                @endif
 
                 <label for="name" class="text-[#888b95] text-sm m-2">
                     Name Of Hospital
@@ -31,7 +33,12 @@
                 <label for="type" class="text-[#888b95] text-sm m-2">
                     Type
                 </label>
-                <input type="text" class="input" name="type" id="type" value="{{ old('type') }}" required>
+                <select class="input" name="type" id="type" value="{{ old('type') }}" required>
+                  <option value="" disabled selected>Select Type</option>
+                  @foreach($type as $type)
+                    <option value="{{$type}}">{{ $type  }}</option>
+                  @endforeach
+                </select>
 
                 <label for="state" class="text-[#888b95] text-sm m-2">
                     State
@@ -51,8 +58,11 @@
                 <label for="proprietor" class="text-[#888b95] text-sm m-2">
                     Proprietor
                 </label>
-                <input type="text" class="input" name="proprietor" id="proprietor" value="{{ old('proprietor') }}" required>
-
+                <select  class="input" name="proprietor" id="proprietor" value="{{ old('proprietor') }}" required>
+                <option value="" disabled selected>Select</option>
+                  @foreach($states as $state)
+                    <option value="{{$state}}">{{ $state  }}</option>
+                  @endforeach
                 <label for="director" class="text-[#888b95] text-sm m-2">
                     MD/CEO
                 </label>

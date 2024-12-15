@@ -75,3 +75,6 @@ html {
 label {
     display:block;
 }
+option {
+    @apply text-[#888b95];
+}

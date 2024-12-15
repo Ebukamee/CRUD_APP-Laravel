@@ -11,6 +11,7 @@
             <div class="col-span-1">
                 <h2 class="text-4xl mb-10" data-aos="fade-down">Add Medications</h2>
                 <p class="text-sm" data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta error reprehenderit, doloremque ducimus in iusto mollitia voluptates maiores qui ipsa libero! Voluptas ea necessitatibus delectus ratione rerum soluta, earum doloribus.</p>
+                <img src="https://static.vecteezy.com/system/resources/previews/010/810/331/non_2x/medicine-pharmacy-hospital-set-of-medicines-with-labels-the-concept-of-medical-subjects-illustration-in-cartoon-style-vector.jpg" alt="" class='rounded-xl mt-10' data-aos="zoom-in">
             </div>
             <form action="{{route('medication.create')}}" method="POST" enctype="multipart/form-data" data-aos="zoom-in">
             @csrf
