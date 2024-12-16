@@ -61,8 +61,9 @@ class MedicationController extends Controller
         medication::create($validated);
         return redirect()->route('medication.index')->with('success', 'Medication added successfully!');
     }
-}
-public function destroy(Medication $drug) {
-    $drug ->delete();
-    return redirect()->route('medication.index')
+    public function destroy($id) {
+        $drug = medication::findOrFail($id);
+        $drug ->delete();
+        return redirect()->route('medication.index');
+    }
 }

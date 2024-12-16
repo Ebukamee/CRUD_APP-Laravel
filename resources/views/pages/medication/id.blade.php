@@ -52,8 +52,10 @@
                     </tbody>
                 </table>
                 <div class="flex justify-between mt-10">
-                    <button class="teal"><a href="{{route('medication.edit',$drug->id)}}">Edit</a></button>
-                    <form action="{{route('medication.destroy',$drug ->id)}}">
+                    <div><button class="teal"><a href="{{route('medication.edit',$drug->id)}}">Edit</a></button></div>
+                    <form action="{{route('medication.destroy',$drug ->id)}}" method="POST" class="w-fit">
+                    @csrf
+                    @method('delete')
                        <button class="red">Delete</button>
                     </form>
                 </div>

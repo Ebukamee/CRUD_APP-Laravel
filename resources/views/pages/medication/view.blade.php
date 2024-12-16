@@ -16,7 +16,7 @@
                   <img src="{{asset('uploads/images/'. $drug->image)}}" alt="" class='rounded-sm aspect-square'>
                   <h2 class=" text-md font-semibold mt-5">{{ $drug -> name }}</h2>
                   <div class="grid">
-                    <button class="teal">View Details</button>
+                    <button class="teal"><a href="/medication/{{$drug->id}}">View Details</a></button>
                   </div>
                 </div>
                 @endforeach
