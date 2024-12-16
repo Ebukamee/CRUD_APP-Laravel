@@ -58,7 +58,7 @@
                     <span class="text-gray-700 font-medium">Proprietor: {{$hospital -> proprietor}}</span>
                 </div>
                 <div class="flex justify-between mt-10">
-                    <button class="teal">Edit</button>
+                    <button class="teal"><a href="{{route('hospital.edit',$hospital->id)}}">Edit</a></button>
                     <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-8 lg:mx-5 hover m-10 bg-white"><a href="{{$hospital -> url}}" class="p-0" target="_blank" >View Map</a></button>
                     
                 </div>

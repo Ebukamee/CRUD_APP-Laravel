@@ -30,6 +30,44 @@ class HospitalController extends Controller
         $prop = array('Mission','Private', 'State Government', 'Federal Government', 'Local Government','Charity');
         return view("pages.hospital.add",['type'=>$type, 'prop' => $prop, 'states' => $states]);
     }
+    public function update(Request $request,hospital $hospital) {
+        $validated = $request->validate([
+            'name' => 'required|string',
+            'type' => 'required|string',
+            'state' => 'required|string',
+            'city' => 'required|string',
+            'address' => 'required|string',
+            'proprietor' => 'required|string',
+            'director' => 'required|string',
+            'description' => 'required|string',
+            'image' => 'required|mimes:jpg,png,jpeg,webp,jfif|max:3000',
+        ]);
+        if($request->has('image')) {
+            $destination = 'uploads/images/'. $hospital -> image;
+            if(\File::exists ($destination)) {
+                \File::delete($destination);       
+               }
+               $imageName =time(). '.' .$request->image->getClientOriginalExtension();
+               $request->image->move(public_path('uploads/images/'),$imageName);
+               $validated['image'] =$imageName;
+        }
+        $hospital -> update($validated);
+    }
+    public function edit(hospital $hospital) {
+        $states = [
+            "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", 
+            "Bayelsa", "Benue", "Borno", "Cross River", "Delta", 
+            "Ebonyi", "Edo", "Ekiti", "Enugu", "Gombe", 
+            "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", 
+            "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", 
+            "Niger", "Ogun", "Ondo", "Osun", "Oyo", 
+            "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", 
+            "Zamfara", "FCT"
+        ];
+        $type = array('General Hospital','Teaching Hospital','Medical Centre','Specialist Hospital','Clinic','Primary Healthcare Centre');
+        $prop = array('Mission','Private', 'State Government', 'Federal Government', 'Local Government','Charity');
+        return view('pages.hospital.edit',compact('hospital'),['type'=>$type, 'prop' => $prop, 'states' => $states]);
+    }
     public function store(Request $request) {
         $validated = $request->validate([
             'name' => 'required|string',
