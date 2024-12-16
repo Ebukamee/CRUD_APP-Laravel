@@ -52,8 +52,10 @@
                     </tbody>
                 </table>
                 <div class="flex justify-between mt-10">
-                    <button class="teal">Edit</button>
-                    <button class="red">Delete</button>
+                    <button class="teal"><a href="{{route('medication.edit',$drug->id)}}">Edit</a></button>
+                    <form action="{{route('medication.destroy',$drug ->id)}}">
+                       <button class="red">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>

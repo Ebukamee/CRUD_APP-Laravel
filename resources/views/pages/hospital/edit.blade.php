@@ -35,10 +35,10 @@
                 <label for="type" class="text-[#888b95] text-sm m-2">
                     Type
                 </label>
-                <select class="input" name="type" id="type" value="{{$hospital->type}}" >
+                <select class="input" name="type" id="type" >
                     <option value="" disabled selected>Select Type</option>
                     @foreach($type as $type)
-                    <option value="{{$type}}"{{$type == old('type') ? 'selected' : '' }}>{{ $type  }}</option>
+                    <option value="{{$type}}"{{$type == $hospital->type ? 'selected' : '' }}>{{ $type  }}</option>
                     @endforeach
                 </select>
 
@@ -48,7 +48,7 @@
                 <select class="input" name="state" id="state"   value="{{$hospital->state}}">
                     <option value="" disabled selected>Select State</option>
                     @foreach($states as $state)
-                    <option value="{{$state}}" {{$state == old('state') ? 'selected' : ''  }}>{{ $state  }}</option>
+                    <option value="{{$state}}" {{$state == $hospital->state ? 'selected' : ''  }}>{{ $state  }}</option>
                     @endforeach
                 </select>
                 <label for="city" class="text-[#888b95] text-sm m-2">
@@ -67,7 +67,7 @@
                 <select class="input" name="proprietor" id="proprietor"  value="{{$hospital->proprietor}}" >
                     <option value="" disabled selected>Select</option>
                     @foreach($prop as $prop)
-                    <option value="{{$prop}}" {{$prop ==  old('prop') ? 'selected' : ''}}>{{ $prop  }}</option>
+                    <option value="{{$prop}}" {{$prop ==  $hospital->proprietor ? 'selected' : ''}}>{{ $prop  }}</option>
                     @endforeach
                 </select>
                 <label for="director" class="text-[#888b95] text-sm m-2">
@@ -78,11 +78,11 @@
                 <label for="description" class="text-[#888b95] text-sm m-2">
                     Description
                 </label>
-                <textarea class="input h-40 p-5 rounded-lg" name="description" id="description"  placeholder="Description"  value="{{$hospital->description}}"></textarea>
+                <textarea class="input h-40 p-5 rounded-lg" name="description" id="description"  placeholder="Description" >{{$hospital->description}}</textarea>
                 <label for="image" class="text-[#888b95] text-sm m-2">
                     Google Map Link
                 </label>
-                <input type="url" class="input" name="url" id="url" placeholder="Add Google Map" >
+                <input type="url" class="input" name="url" id="url" placeholder="Add Google Map" value="{{$hospital->url}}" >
                 <label for="image" class="cursor-pointer flex items-center gap-2 transition duration-300 m-2">
                     <img src="/img.png" class="w-[20px]" alt="Upload">
                     <p id="fileLabelText" class="text-[#888b95] text-sm m-2">Upload Image of Hospital</p>

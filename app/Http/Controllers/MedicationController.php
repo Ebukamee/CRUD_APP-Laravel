@@ -18,6 +18,31 @@ class MedicationController extends Controller
     public function create() {
         return view("pages.medication.add");
     }
+    public function edit(Medication $medication) {
+        return view('pages.medication.edit', compact('medication'));
+    }
+    public function update(Request $request, Medication $medication) {
+        $validated = $request->validate([
+            'name' => 'required|string',
+            'type' => 'required|string',
+            'active' => 'required|string',
+            'indication' => 'required|string',
+            'manufacturer' => 'required|string',
+            'side' => 'required|string',
+            'image' => 'sometimes|mimes:jpg,png,jpeg,jfif|max:3000'
+        ]);
+        if($request ->has('image')) {
+            $destination = 'uploads/images/'. $medication -> image;
+            if(\File::exists ($destination)) {
+                \File::delete($destination);       
+               }
+            $imageName =time(). '.' .$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('uploads/images/'),$imageName);
+            $validated['image'] =$imageName;
+        }
+        $medication -> update($validated);
+        return redirect()->route('medication.show', $medication->id)->with('success', 'Medication Updated successfully!');
+    }
     public function store(Request $request) {
         $validated = $request->validate([
             'name' => 'required|string',
@@ -36,4 +61,8 @@ class MedicationController extends Controller
         medication::create($validated);
         return redirect()->route('medication.index')->with('success', 'Medication added successfully!');
     }
+}
+public function destroy(Medication $drug) {
+    $drug ->delete();
+    return redirect()->route('medication.index')
 }

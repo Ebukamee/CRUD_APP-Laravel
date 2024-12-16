@@ -40,7 +40,7 @@ class HospitalController extends Controller
             'proprietor' => 'required|string',
             'director' => 'required|string',
             'description' => 'required|string',
-            'image' => 'required|mimes:jpg,png,jpeg,webp,jfif|max:3000',
+            'image' => 'sometimes|mimes:jpg,png,jpeg,webp,jfif|max:3000',
         ]);
         if($request->has('image')) {
             $destination = 'uploads/images/'. $hospital -> image;
@@ -52,6 +52,7 @@ class HospitalController extends Controller
                $validated['image'] =$imageName;
         }
         $hospital -> update($validated);
+        return redirect()->route('hospital.show', $hospital->id)->with('success', 'Hospital updated successfully!');
     }
     public function edit(hospital $hospital) {
         $states = [
