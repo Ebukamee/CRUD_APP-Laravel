@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\hospital;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 
 class HospitalController extends Controller
 {
@@ -17,14 +16,19 @@ class HospitalController extends Controller
         return view('pages.hospital.id', ["hospital" => $data]);
     }
     public function create() {
-        $response = Http::get('https://states-and-cities.com/api/v1/states');
-        $states = [];
-       if ($response->successful()) {
-        $states = $response->json(); // Decode JSON response
-        }
+        $states = [
+            "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", 
+            "Bayelsa", "Benue", "Borno", "Cross River", "Delta", 
+            "Ebonyi", "Edo", "Ekiti", "Enugu", "Gombe", 
+            "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", 
+            "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", 
+            "Niger", "Ogun", "Ondo", "Osun", "Oyo", 
+            "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", 
+            "Zamfara", "FCT"
+        ];
         $type = array('General Hospital','Teaching Hospital','Medical Centre','Specialist Hospital','Clinic','Primary Healthcare Centre');
         $prop = array('Mission','Private', 'State Government', 'Federal Government', 'Local Government','Charity');
-        return view("pages.hospital.add",['type'=>$type, 'prop' =>$prop, 'states' => $states]);
+        return view("pages.hospital.add",['type'=>$type, 'prop' => $prop, 'states' => $states]);
     }
     public function store(Request $request) {
         $validated = $request->validate([

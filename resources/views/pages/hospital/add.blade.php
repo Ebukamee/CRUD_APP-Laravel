@@ -2,19 +2,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create</title>
+    <title>Add Hospitals</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 @vite('resources/css/app.css')
 <body>
     <x-layout>
-     @if($errors->any())
-                <ul class="p-4 bg-red-100 m-auto w-[80%] max-w-[800px] rounded">
+        @if($errors->any())
+        <div id="error-overlay" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-red-100 p-4 w-[80%] max-w-[800px] rounded-lg shadow-lg z-50">
+            <ul>
                 @foreach($errors->all() as $err)
-                <p class="my-2 text-red-500">{{ $err }}</p>
+                <li class="my-2 text-red-500">{{ $err }}</li>
                 @endforeach
-                </ul>
-                @endif
+            </ul>
+        </div>
+        @endif
         <div class="bg-[#f7e8d1] m-auto my-10 w-[80%] max-w-[800px] p-10 rounded-3xl  grid lg:grid-cols-2 gap-10">
             <div class="col-span-1">
                 <h2 class="text-4xl mb-10" data-aos="fade-down">Add Hospitals</h2>
@@ -34,17 +36,21 @@
                     Type
                 </label>
                 <select class="input" name="type" id="type" value="{{ old('type') }}" required>
-                  <option value="" disabled selected>Select Type</option>
-                  @foreach($type as $type)
-                    <option value="{{$type}}">{{ $type  }}</option>
-                  @endforeach
+                    <option value="" disabled selected>Select Type</option>
+                    @foreach($type as $type)
+                    <option value="{{$type}}"{{$type == old('type') ? 'selected' : '' }}>{{ $type  }}</option>
+                    @endforeach
                 </select>
 
                 <label for="state" class="text-[#888b95] text-sm m-2">
                     State
                 </label>
-                <input type="text" class="input" name="state" id="state" value="{{ old('state') }}" required>
-
+                <select class="input" name="state" id="state" value="{{ old('state') }}" required>
+                    <option value="" disabled selected>Select State</option>
+                    @foreach($states as $state)
+                    <option value="{{$state}}" {{$state == old('state') ? 'selected' : ''  }}>{{ $state  }}</option>
+                    @endforeach
+                </select>
                 <label for="city" class="text-[#888b95] text-sm m-2">
                     City/Town
                 </label>
@@ -58,11 +64,12 @@
                 <label for="proprietor" class="text-[#888b95] text-sm m-2">
                     Proprietor
                 </label>
-                <select  class="input" name="proprietor" id="proprietor" value="{{ old('proprietor') }}" required>
-                <option value="" disabled selected>Select</option>
-                  @foreach($states as $state)
-                    <option value="{{$state}}">{{ $state  }}</option>
-                  @endforeach
+                <select class="input" name="proprietor" id="proprietor" value="{{ old('proprietor') }}" required>
+                    <option value="" disabled selected>Select</option>
+                    @foreach($prop as $prop)
+                    <option value="{{$prop}}" {{$prop ==  old('prop') ? 'selected' : ''}}>{{ $prop  }}</option>
+                    @endforeach
+                </select>
                 <label for="director" class="text-[#888b95] text-sm m-2">
                     MD/CEO
                 </label>
@@ -76,10 +83,11 @@
                     Google Map Link
                 </label>
                 <input type="url" class="input" name="url" id="url" placeholder="Add Google Map" required>
-                <label for="image" class="text-[#888b95] text-sm m-2">
-                    Image of Hospital
+                <label for="image" class="cursor-pointer flex items-center gap-2 transition duration-300 m-2">
+                    <img src="/img.png" class="w-[20px]" alt="Upload">
+                    <p id="fileLabelText" class="text-[#888b95] text-sm m-2">Upload Image of Hospital</p>
                 </label>
-                <input type="file" class="input" name="image" id="image" required>
+                <input type="file" class="hidden" name="image" id="image" value="{{ old('image') }}" required>
 
                 <button class="teal">Submit</button>
             </form>
@@ -95,6 +103,29 @@
             duration: 2000
             , once: true
         , });
+        document.addEventListener('DOMContentLoaded', () => {
+            const errorOverlay = document.getElementById('error-overlay');
+            if (errorOverlay) {
+                setTimeout(() => {
+                    errorOverlay.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                    setTimeout(() => errorOverlay.remove(), 500); 
+                }, 5000);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileInput = document.getElementById('image');
+            const fileLabel = document.getElementById('fileLabelText');
+
+            if (fileInput && fileLabel) {
+                fileInput.addEventListener('change', (event) => {
+                    const fileName = event.target.files[0] ?.name || 'Upload Image of Hospital';
+                    fileLabel.textContent = fileName;
+                });
+            } else {
+                console.error('File input or label element not found.');
+            }
+        });
 
     </script>
 </body>

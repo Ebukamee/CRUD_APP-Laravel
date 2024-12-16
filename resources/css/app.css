@@ -69,6 +69,9 @@ html {
 .b {
     background-image: linear-gradient(hsl(237,17%,21%),hsl(237,23%,32%));
 }
+th {
+    @apply  bg-gray-100
+}
 .footer {
     background-color: hsl(240, 10%, 16%);
 }

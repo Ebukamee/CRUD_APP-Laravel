@@ -13,7 +13,7 @@ class MedicationController extends Controller
     }
     public function show($id) {
         $data = medication::findOrFail($id);
-        return view('pages.medication.id', ["drugs" => $data]);
+        return view('pages.medication.id', ["drug" => $data]);
     }
     public function create() {
         return view("pages.medication.add");

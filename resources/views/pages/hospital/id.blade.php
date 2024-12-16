@@ -13,13 +13,15 @@
         </h2>
         <div class="bg-[#e5f1fe] m-10 pt-10 pb-10 px-8 rounded-3xl  h-fit bg-cover bg-no-repeat shadow-lg flex gap-10 justify-between flex-col lg:flex-row" style="background-image: url('/wws.svg');">
             <!-- Profile Image -->
-            <div class="w-[80%] lg:w-[50%] m-auto">
-                <img src="{{asset('uploads/images/'. $hospital->image)}}" alt="Profile Image" class="rounded-md mb-5 shadow-md object-cover w-full h-full">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ asset('uploads/images/' . $hospital->image) }}" 
+                     alt="{{ $hospital->name }}" 
+                     class="rounded-md shadow-md object-cover w-full h-full">
             </div>
             <div class="shadow-lg lg:w-[50%] p-5 rounded-xl">
-                {{-- <h2 class="text-3xl font-semibold text-center mb-4 text-gray-800" data-aos="flip-left">
+                <h2 class="text-3xl font-semibold  mb-4 text-gray-800" data-aos="flip-left">
                     {{ $hospital->name }}
-                </h2> --}}
+                </h2>
 
                 <!-- Description -->
 
@@ -57,9 +59,11 @@
                 </div>
                 <div class="flex justify-between mt-10">
                     <button class="teal">Edit</button>
-                    <button class="red">Delete</button>
+                    <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-8 lg:mx-5 hover m-10 bg-white"><a href="{{$hospital -> url}}" class="p-0" target="_blank" >View Map</a></button>
+                    
                 </div>
-                <button class="red">Delete</button>
+                <div class="m-auto w-fit"><button class="red">Delete</button></div>
+                
             </div>
         </div>
 
