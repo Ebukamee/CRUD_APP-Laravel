@@ -7,6 +7,12 @@
 
 </head>
 <body>
+@if(session()->has('success'))
+    <div id="success-overlay" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-100 p-4 w-[80%] max-w-[800px] rounded-lg shadow-lg z-50">
+        <p class="my-2 text-green-500">{{ session()->get('success') }}</p>
+    </div>
+
+    @endif
     <x-layout>
         <h2 class="text-3xl font-semibold text-center mb-4 text-gray-800" data-aos="flip-left">
             {{ $hospital->name }}
@@ -72,5 +78,17 @@
         </div>
 
     </x-layout>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+            const errorOverlay = document.getElementById('success-overlay');
+            if (errorOverlay) {
+                setTimeout(() => {
+                    errorOverlay.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                    setTimeout(() => errorOverlay.remove(), 500); 
+                }, 5000);
+            }
+        });
+
+    </script>
 </body>
 </html>

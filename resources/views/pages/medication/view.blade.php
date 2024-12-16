@@ -7,6 +7,12 @@
     @vite('/resources/css/app.css')
 </head>
 <body>
+@if(session()->has('success'))
+    <div id="success-overlay" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-100 p-4 w-[80%] max-w-[800px] rounded-lg shadow-lg z-50">
+        <p class="my-2 text-green-500">{{ session()->get('success') }}</p>
+    </div>
+
+    @endif
     <x-layout>
         <div class="m-5 p-5">
         <h1 class="text-4xl font-semibold text-center">Browse Medications</h1>
