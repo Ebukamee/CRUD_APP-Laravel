@@ -22,4 +22,4 @@ Route::get('/add/medication', [MedicationController::class, "create"])->name('me
 Route::post('/add/hospital', [HospitalController::class, "store"])->name('hospital.store');
 Route::post('/add/medication', [MedicationController::class, "store"])->name('medication.store');
 Route::delete('/medication/{id}', [MedicationController::class, "destroy"])->name('medication.destroy');
-Route::delete('/hospital/{id}', [HospitalController::class, "destroy"])->name('medicationdestroy');
+Route::delete('/hospital/{id}', [HospitalController::class, "destroy"])->name('hospital.destroy');

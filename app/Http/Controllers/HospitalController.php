@@ -91,6 +91,11 @@ class HospitalController extends Controller
         hospital::create($validated);
         return redirect()->route('hospital.index')->with('success', 'Hospital added successfully!');
     }
+    public function destroy($id) {
+        $hospital = hospital::findOrFail($id);
+        $hospital ->delete();
+        return redirect()->route('hospital.index')->with('success', 'Hospital deleted successfully!');;
+    }
 }
 
 

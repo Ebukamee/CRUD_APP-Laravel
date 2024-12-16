@@ -62,7 +62,11 @@
                     <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-8 lg:mx-5 hover m-10 bg-white"><a href="{{$hospital -> url}}" class="p-0" target="_blank" >View Map</a></button>
                     
                 </div>
-                <div class="m-auto w-fit"><button class="red">Delete</button></div>
+                 <form action="{{route('hospital.destroy',$hospital ->id)}}" method="POST" class=" m-auto w-fit">
+                    @csrf
+                    @method('delete')
+                       <button class="red">Delete</button>
+                    </form>
                 
             </div>
         </div>

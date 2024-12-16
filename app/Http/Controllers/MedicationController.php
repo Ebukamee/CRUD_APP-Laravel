@@ -64,6 +64,6 @@ class MedicationController extends Controller
     public function destroy($id) {
         $drug = medication::findOrFail($id);
         $drug ->delete();
-        return redirect()->route('medication.index');
+        return redirect()->route('medication.index')->with('success', 'Medication successfully!');;
     }
 }
