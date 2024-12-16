@@ -40,6 +40,7 @@ class HospitalController extends Controller
             'proprietor' => 'required|string',
             'director' => 'required|string',
             'description' => 'required|string',
+            'url' => 'required|string',
             'image' => 'sometimes|mimes:jpg,png,jpeg,webp,jfif|max:3000',
         ]);
         if($request->has('image')) {
@@ -81,6 +82,7 @@ class HospitalController extends Controller
             'proprietor' => 'required|string',
             'director' => 'required|string',
             'description' => 'required|string',
+            'url' => 'required|string',
             'image' => 'required|mimes:jpg,png,jpeg,webp,jfif|max:3000',
         ]);
         if($request->has('image')) {

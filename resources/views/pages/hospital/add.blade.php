@@ -79,7 +79,7 @@
                     Description
                 </label>
                 <textarea class="input h-40 p-5 rounded-lg" name="description" id="description" required placeholder="Description">{{ old('description') }}</textarea>
-                <label for="image" class="text-[#888b95] text-sm m-2">
+                <label for="url" class="text-[#888b95] text-sm m-2">
                     Google Map Link
                 </label>
                 <input type="url" class="input" name="url" id="url" placeholder="Add Google Map" required>
