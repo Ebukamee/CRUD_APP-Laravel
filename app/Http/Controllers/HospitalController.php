@@ -64,9 +64,11 @@ class HospitalController extends Controller
             "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", 
             "Zamfara", "FCT"
         ];
-        $type = array('General Hospital','Teaching Hospital','Medical Centre','Specialist Hospital','Clinic','Primary Healthcare Centre');
-        $prop = array('Mission','Private', 'State Government', 'Federal Government', 'Local Government','Charity');
-        return view('pages.hospital.edit',compact('hospital'),['type'=>$type, 'prop' => $prop, 'states' => $states]);
+    
+        $type = ['General Hospital', 'Teaching Hospital', 'Medical Centre', 'Specialist Hospital', 'Clinic', 'Primary Healthcare Centre'];
+        $prop = ['Mission', 'Private', 'State Government', 'Federal Government', 'Local Government', 'Charity'];
+    
+        return view('pages.hospital.edit', compact('hospital', 'type', 'prop', 'states'));
     }
     public function store(Request $request) {
         $validated = $request->validate([
