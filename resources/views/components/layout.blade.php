@@ -19,36 +19,37 @@
             <p class='m-2'><a href="/">Home</a></p>
             <p class='m-2'><a href="/hospital">Hospitals</a></p>
             <p class='m-2'><a href="/medication">Medication</a></p>
-      <div class="relative group">
-    <p class="m-2 relative cursor-pointer">Add +</p>
-    <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-0 w-[900px] bg-white rounded-lg shadow-lg text-black hidden group-hover:block">
-        <div class="grid grid-cols-2 gap-6 p-8">
-            <!-- Left Column -->
-            <div>
-            <a href="/add/hospital">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Hospitals</h2>
-                <p class="text-gray-600 text-md mb-6">
-                    Access healthcare facilities, explore hospitals, and connect with specialists tailored to your needs.
-                </p>
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Medications</h2>
-                <p class="text-gray-600 text-md">
-                    Find medications, pharmacy benefits, and learn about comprehensive treatment options.
-                </p>
-            </a>
-            </div>
-            <!-- Right Column with Image and Centered Content -->
-            <div class="bg-[#e5f1fe] flex items-center justify-center rounded-lg bg-cover bg-no-repeat p-8"
-                style="background-image: url('/linkbg.svg');">
-                <div class="text-center">
-                    <h2 class="text-3xl font-bold text-[#002265] mb-4">For Business and Organizations</h2>
-                    <p class="text-gray-700 text-md">
-                        We’re rebuilding healthcare how it should be: simple, direct, and easy to access.
-                    </p>
+            <div class="relative group">
+                <p class="m-2 relative cursor-pointer">Add +</p>
+                <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-0 w-[900px] bg-white rounded-lg shadow-lg text-black hidden group-hover:block">
+                    <div class="grid grid-cols-2 gap-6 p-8">
+                        <!-- Left Column -->
+                        <div>
+                            <a href="/add/hospital">
+                                <h2 class="text-2xl font-bold text-gray-800 mb-4">Hospitals</h2>
+                                <p class="text-gray-600 text-md mb-6">
+                                    Access healthcare facilities, explore hospitals, and connect with specialists tailored to your needs.
+                                </p>
+                            </a>
+                            <a href="/add/medication">
+                                <h2 class="text-2xl font-bold text-gray-800 mb-4">Medications</h2>
+                                <p class="text-gray-600 text-md">
+                                    Find medications, pharmacy benefits, and learn about comprehensive treatment options.
+                                </p>
+                            </a>
+                        </div>
+                        <!-- Right Column with Image and Centered Content -->
+                        <div class=" flex items-center justify-center rounded-lg bg-cover bg-no-repeat p-8" style="background-image: url('/linkbg.svg');">
+                            <div class="text-center text-white">
+                                <h2 class="text-3xl font-bold text-[#002265] mb-4">For Business and Organizations</h2>
+                                <p class="text-gray-700 text-md">
+                                    We’re rebuilding healthcare how it should be: simple, direct, and easy to access.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
         </div>
         <div class="col-span-2 text-black hidden lg:block">
@@ -66,16 +67,43 @@
         </button>
 
     </nav>
-    <div id="mobile-menu" class="hidden bg-[#888b95] lg:hidden p-10 text-white">
-        <p class='m-2'><a href="/">Home</a></p>
-        <p class='m-2'><a href="/hospital">Hospitals</a></p>
-        <p class='m-2'><a href="/medication">Medications</a></p>
+    <div id="mobile-menu" class="hidden bg-[#002265] shadow-lg rounded-xl w-full lg:hidden p-10 absolute text-white">
+        <p class='m-2 my-5'><a href="/">Home</a></p>
+        <p class='m-2 my-5'><a href="/hospital">Hospitals</a></p>
+        <p class='m-2 my-5'><a href="/medication">Medications</a></p>
         <div class="relative group">
-            <p class="m-2 relative cursor-pointer">Add +</p>
-            <div class="absolute top-full left-0 w-48 p-4 bg-gray-100 rounded-md shadow-md text-black hidden group-hover:block">
-                <p class="text-sm">Click here to add new content!</p>
+            <p class="m-2 my-5 relative cursor-pointer">Add +</p>
+            <!-- Overlay -->
+            <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[90%] md:w-[80%] bg-white rounded-lg shadow-lg text-black hidden group-hover:block">
+                <div class="flex flex-col md:grid md:grid-cols-2 gap-6 p-4 md:p-8">
+                    <!-- Right Column with Image on Top for Small Screens -->
+                    <div class="bg-[#e5f1fe] flex items-center justify-center rounded-lg bg-cover bg-no-repeat p-8 md:p-8" style="background-image: url('/linkbg.svg');">
+                        <div class="text-center text-white">
+                            <h2 class="text-2xl md:text-3xl font-bold text-[#002265] mb-2 md:mb-4">For Business and Organizations</h2>
+                            <p class="text-gray-700 text-md md:text-lg">
+                                We’re rebuilding healthcare how it should be: simple, direct, and easy to access.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Left Column for Text Links -->
+                    <div>
+                        <a href="/add/hospital">
+                            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-2 md:mb-4">Hospitals</h2>
+                            <p class="text-gray-600 text-sm md:text-md mb-4 md:mb-6">
+                                Access healthcare facilities, explore hospitals, and connect with specialists tailored to your needs.
+                            </p>
+                        </a>
+                        <a href="/add/medication">
+                            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-2 md:mb-4">Medications</h2>
+                            <p class="text-gray-600 text-sm md:text-md">
+                                Find medications, pharmacy benefits, and learn about comprehensive treatment options.
+                            </p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div>
             <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button>
             <button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button>
@@ -129,6 +157,7 @@
             hamburgerIcon.classList.toggle('hidden');
             closeIcon.classList.toggle('hidden');
         });
+
     </script>
 </body>
 </html>
