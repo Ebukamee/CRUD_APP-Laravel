@@ -67,7 +67,7 @@
         </button>
 
     </nav>
-    <div id="mobile-menu" class="hidden bg-[#002265] shadow-lg rounded-xl w-full lg:hidden p-10 absolute text-white">
+    <div id="mobile-menu" class="hidden bg-[#002265] z-20 shadow-lg rounded-xl w-full lg:hidden p-10 absolute text-white">
         <p class='m-2 my-5'><a href="/">Home</a></p>
         <p class='m-2 my-5'><a href="/hospital">Hospitals</a></p>
         <p class='m-2 my-5'><a href="/medication">Medications</a></p>
