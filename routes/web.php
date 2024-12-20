@@ -28,9 +28,6 @@ Route::delete('/hospital/{id}', [HospitalController::class, "destroy"])->name('h
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
