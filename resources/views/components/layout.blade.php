@@ -19,7 +19,7 @@
             <p class='m-2'><a href="/">Home</a></p>
             <p class='m-2'><a href="/hospital">Hospitals</a></p>
             <p class='m-2'><a href="/medication">Medication</a></p>
-            <div class="relative group">
+            <div class="relative group z-20">
                 <p class="m-2 relative cursor-pointer">Add +</p>
                 <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-0 w-[900px] bg-white rounded-lg shadow-lg text-black hidden group-hover:block">
                     <div class="grid grid-cols-2 gap-6 p-8">
