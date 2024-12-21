@@ -53,8 +53,8 @@
 
         </div>
         <div class="col-span-2 text-black hidden lg:block">
-            <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button>
-            <button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button>
+            <a href='/login'><button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button></a>
+            <a href="/register"><button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button></a>
         </div>
 
         <button id="menu-toggle" class="text-gray-600 focus:outline-none lg:hidden">
@@ -105,8 +105,8 @@
         </div>
 
         <div>
-            <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button>
-            <button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button>
+            <a href='/login'><button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button></a>
+            <a href="/register"><button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button></a>
         </div>
     </div>
     {{$slot}}
@@ -150,7 +150,7 @@
         const hamburgerIcon = document.getElementById('hamburger-icon');
         const closeIcon = document.getElementById('close-icon');
         const currentYear = document.getElementById('copyright');
-        currentYear.textContent = `©${new Date().getFullYear()} Codedev. All Rights Reserved.`;
+        currentYear.textContent = `©${new Date().getFullYear()} Cubix Code. All Rights Reserved.`;
 
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
