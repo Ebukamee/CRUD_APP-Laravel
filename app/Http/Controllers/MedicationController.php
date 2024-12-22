@@ -15,8 +15,9 @@ class MedicationController extends Controller
         $data = medication::findOrFail($id);
         return view('pages.medication.id', ["drug" => $data]);
     }
-    public function create() {
-        return view("pages.medication.add");
+    public function create(Request $request) {
+        $user = $request->user();
+        return view("pages.medication.add",compact('user'));
     }
     public function edit(Medication $medication) {
         return view('pages.medication.edit', compact('medication'));
@@ -29,6 +30,7 @@ class MedicationController extends Controller
             'indication' => 'required|string',
             'manufacturer' => 'required|string',
             'side' => 'required|string',
+            'user-name' => 'required|string',
             'image' => 'sometimes|mimes:jpg,png,jpeg,jfif|max:3000'
         ]);
         if($request ->has('image')) {
@@ -51,6 +53,7 @@ class MedicationController extends Controller
             'indication' => 'required|string',
             'manufacturer' => 'required|string',
             'side' => 'required|string',
+            'user-name' => 'required|string',
             'image' => 'required|mimes:jpg,png,jpeg,jfif'
         ]);
         if($request ->has('image')) {

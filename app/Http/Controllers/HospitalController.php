@@ -15,7 +15,7 @@ class HospitalController extends Controller
         $data = hospital::findOrFail($id);
         return view('pages.hospital.id', ["hospital" => $data]);
     }
-    public function create() {
+    public function create(Request $request) {
         $states = [
             "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", 
             "Bayelsa", "Benue", "Borno", "Cross River", "Delta", 
@@ -26,9 +26,10 @@ class HospitalController extends Controller
             "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", 
             "Zamfara", "FCT"
         ];
+        $user = $request->user();
         $type = array('General Hospital','Teaching Hospital','Medical Centre','Specialist Hospital','Clinic','Primary Healthcare Centre');
         $prop = array('Mission','Private', 'State Government', 'Federal Government', 'Local Government','Charity');
-        return view("pages.hospital.add",['type'=>$type, 'prop' => $prop, 'states' => $states]);
+        return view("pages.hospital.add",['type'=>$type, 'prop' => $prop, 'states' => $states, 'user'=>$user]);
     }
     public function update(Request $request,hospital $hospital) {
         $validated = $request->validate([
@@ -41,8 +42,11 @@ class HospitalController extends Controller
             'director' => 'required|string',
             'description' => 'required|string',
             'url' => 'required|string',
+            'user-name' => 'required|string',
             'image' => 'sometimes|mimes:jpg,png,jpeg,webp,jfif|max:3000',
         ]);
+
+
         if($request->has('image')) {
             $destination = 'uploads/images/'. $hospital -> image;
             if(\File::exists ($destination)) {
@@ -83,6 +87,7 @@ class HospitalController extends Controller
             'director' => 'required|string',
             'description' => 'required|string',
             'url' => 'required|string',
+            'user-name' => 'required|string',
             'image' => 'required|mimes:jpg,png,jpeg,webp,jfif|max:3000',
         ]);
         if($request->has('image')) {
@@ -103,3 +108,6 @@ class HospitalController extends Controller
 
 
 
+// The University of Nigeria Teaching Hospital is a General Hospital in Enugu state that also serves as the Teaching Hospital of the Health students of the University of Nigeria, Nsukka(One of the Best Universities In Nigeria).
+
+// Fun Fact: This Hospital is the First in the to perform a successful open heart surgery

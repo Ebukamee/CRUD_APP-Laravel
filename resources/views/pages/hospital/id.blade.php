@@ -31,7 +31,7 @@
 
                 <!-- Description -->
 
-                <p class="mb-5  text-gray-600">Added by Chukwuebuka Nwokike</p>
+                <p class="mb-5  text-gray-600">Updated By {{$hospital['user-name'] }}</p>
                 <p class="text-lg text-gray-600 mb-6">
                     {{$hospital -> description}}
                 </p>

@@ -23,6 +23,7 @@ class MedicationFactory extends Factory
             "indication" =>fake()->randomElement(["Headache","Fever", "Stomach Ache", "Rashes", "Cough", "Cold" ]),
             "manufacturer"=>fake()->streetAddress(),
             "side"=>fake()->realText(30),
+            "user-name" =>fake()->name(),
             "image"=>fake()->randomElement(['/man.png','/illustration-editor-desktop.svg','/illustration-editor-mobile.svg']),
         ];
     }

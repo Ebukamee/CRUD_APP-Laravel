@@ -89,6 +89,10 @@
                 </label>
                 <input type="file" class="hidden" name="image" id="image" value="{{ old('image') }}" required>
 
+                {{-- User's Name --}}
+
+                <input type="text" name="user-name" id="user-name" value='{{$user->name}}'>
+
                 <button class="teal">Submit</button>
             </form>
 

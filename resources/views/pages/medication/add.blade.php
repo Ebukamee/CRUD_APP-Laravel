@@ -53,6 +53,11 @@
                     <p id="fileLabelText" class="text-[#888b95] text-sm m-2">Upload Image of Hospital</p>
                 </label>
                 <input type="file" class="hidden" name="image" id="image" value="{{ old('image') }}" required>
+
+                 {{-- User's Name --}}
+
+                <input type="text" name="user-name" id="user-name" value='{{$user->name}}' hidden>
+                
                 <button class="teal">Submit</button>
             </form>
         </div>

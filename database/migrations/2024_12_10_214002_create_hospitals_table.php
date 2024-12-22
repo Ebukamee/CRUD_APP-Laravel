@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('director');
             $table->text('description');
             $table->string('url');
+            $table->string('user-name');
             $table->string('image');
         });
     }
