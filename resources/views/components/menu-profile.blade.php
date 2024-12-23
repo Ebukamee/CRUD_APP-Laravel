@@ -1,15 +1,15 @@
 <div class="relative inline-block">
   <!-- Circle button -->
   <div
-    class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white cursor-pointer"
-    onclick="toggleDropdown()"
+    class="w-12 h-12 bg-blue-500 rounded-full  flex items-center justify-center text-white cursor-pointer"
+    onclick="Dropdown()"
   >
     {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
   </div>
 
   <!-- Dropdown -->
   <div
-    id="dropdown"
+    id="drop"
     class="absolute  mt-2 w-64 bg-white p-5 shadow-lg rounded-lg   z-50 "
     style="display:none;"
   >
@@ -37,12 +37,12 @@
 </div>
 
 <script>
-  function toggleDropdown() {
-    const dropdown = document.getElementById("dropdown");
-    if (dropdown.style.display === "none" || dropdown.style.display === "") {
-      dropdown.style.display = "block";
+  function Dropdown() {
+    const drop= document.getElementById("drop");
+    if (drop.style.display === "none" || drop.style.display === "") {
+      drop.style.display = "block";
     } else {
-      dropdown.style.display = "none";
+      drop.style.display = "none";
     }
   }
 </script>

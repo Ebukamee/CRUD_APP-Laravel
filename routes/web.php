@@ -5,6 +5,8 @@ use App\Http\Controllers\SignageController;
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\MedicationController;
 use App\Http\Controllers\ProfileController;
+use App\Models\hospital;
+use App\Models\Medication;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -30,7 +32,14 @@ Route::delete('/hospital/{id}', [HospitalController::class, "destroy"])->name('h
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $username = auth()->user()->username;
+    $hospitals = hospital::where('username', $username)
+    ->orderBy('created_at', 'desc')
+    ->get();
+    $medications = Medication::where('username', $username)
+    ->orderBy('created_at', 'desc')
+    ->get();
+    return view('dashboard',compact('hospitals','medications'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

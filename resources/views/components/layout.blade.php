@@ -116,10 +116,8 @@
         </div>
 
            @if(auth()->check())
-        <div></div>
-        <div class="lg:hidden block">
-            <x-profile />
-        </div>
+            <x-menu-profile />
+        
         @else
         <div class="col-span-2 text-black  lg:hidden block">
             <a href='/login'>

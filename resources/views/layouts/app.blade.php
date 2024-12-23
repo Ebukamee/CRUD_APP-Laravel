@@ -60,10 +60,22 @@
             </div>
 
         </div>
-        <div class="col-span-2 text-black hidden lg:block">
-            <a href='/login'><button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button></a>
-            <a href="/register"><button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button></a>
+        @if(auth()->check())
+        <div></div>
+        <div class="hidden lg:block">
+            <x-profile />
         </div>
+        @else
+        <div class="col-span-2 text-black hidden lg:block">
+            <a href='/login'>
+                <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button>
+            </a>
+            <a href="/register">
+                <button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button>
+            </a>
+        </div>
+        @endif
+
 
         <button id="menu-toggle" class="text-gray-600 focus:outline-none lg:hidden">
             <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
@@ -112,12 +124,20 @@
             </div>
         </div>
 
-        <div>
-            <a href='/login'><button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button></a>
-            <a href="/register"><button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button></a>
+           @if(auth()->check())
+            <x-menu-profile />
+        
+        @else
+        <div class="col-span-2 text-black  lg:hidden block">
+            <a href='/login'>
+                <button class="rounded-3xl text-white p-2 border border-[2px] border-[#46e0d3] px-10 lg:mx-5 hover">Log In</button>
+            </a>
+            <a href="/register">
+                <button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button>
+            </a>
         </div>
+        @endif
     </div>
-
 
     <!-- Page Content -->
     <main>
