@@ -11,16 +11,18 @@ class MedicationController extends Controller
         $data = medication::orderBy("created_at", "desc")->paginate(12);
         return view('pages.medication.view', ["drugs" => $data]);
     }
-    public function show($id) {
+    public function show($id, Request $request) {
         $data = medication::findOrFail($id);
-        return view('pages.medication.id', ["drug" => $data]);
+        $user = $request->user();
+        return view('pages.medication.id', ["drug" => $data, 'user'=>$user]);
     }
     public function create(Request $request) {
         $user = $request->user();
         return view("pages.medication.add",compact('user'));
     }
-    public function edit(Medication $medication) {
-        return view('pages.medication.edit', compact('medication'));
+    public function edit(Medication $medication,Request $request) {
+        $user = $request->user();
+        return view('pages.medication.edit', compact('medication','user'));
     }
     public function update(Request $request, Medication $medication) {
         $validated = $request->validate([
@@ -31,6 +33,7 @@ class MedicationController extends Controller
             'manufacturer' => 'required|string',
             'side' => 'required|string',
             'user-name' => 'required|string',
+            'username' => 'required|string',
             'image' => 'sometimes|mimes:jpg,png,jpeg,jfif|max:3000'
         ]);
         if($request ->has('image')) {
@@ -54,6 +57,7 @@ class MedicationController extends Controller
             'manufacturer' => 'required|string',
             'side' => 'required|string',
             'user-name' => 'required|string',
+            'username' => 'required|string',
             'image' => 'required|mimes:jpg,png,jpeg,jfif'
         ]);
         if($request ->has('image')) {

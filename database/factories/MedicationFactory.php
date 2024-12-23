@@ -24,6 +24,7 @@ class MedicationFactory extends Factory
             "manufacturer"=>fake()->streetAddress(),
             "side"=>fake()->realText(30),
             "user-name" =>fake()->name(),
+            "username" => fake()->name(),
             "image"=>fake()->randomElement(['/man.png','/illustration-editor-desktop.svg','/illustration-editor-mobile.svg']),
         ];
     }

@@ -89,6 +89,14 @@
                 </label>
                 <input type="file" class="hidden" name="image" id="image"  value="{{$hospital->image}}" >
 
+
+                 {{-- User's Name --}}
+
+                <input type="text" name="user-name" id="user-name" value='{{$user->name}}' hidden>
+
+                {{-- User's Username --}}
+                <input type="text" name="username" id="username" value='{{$hospital ->username}}' hidden>
+
                 <button class="teal">Submit</button>
             </form>
 

@@ -91,7 +91,10 @@
 
                 {{-- User's Name --}}
 
-                <input type="text" name="user-name" id="user-name" value='{{$user->name}}'>
+                <input type="text" name="user-name" id="user-name" value='{{$user->name}}' hidden>
+
+                {{-- User's Username --}}
+                <input type="text" name="username" id="username" value='{{$user->username}}' hidden>
 
                 <button class="teal">Submit</button>
             </form>

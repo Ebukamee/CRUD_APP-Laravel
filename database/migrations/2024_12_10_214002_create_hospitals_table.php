@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('url');
             $table->string('user-name');
+            $table->string('username');
             $table->string('image');
         });
     }

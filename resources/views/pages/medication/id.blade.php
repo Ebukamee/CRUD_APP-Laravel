@@ -57,11 +57,15 @@
                 </table>
                 <div class="flex justify-between mt-10">
                     <div><button class="teal"><a href="{{route('medication.edit',$drug->id)}}">Edit</a></button></div>
+                    @if($user && $user->username==$drug->username)
+                        
+                    
                     <form action="{{route('medication.destroy',$drug ->id)}}" method="POST" class="w-fit">
                         @csrf
                         @method('delete')
                         <button class="red">Delete</button>
                     </form>
+                    @endif
                 </div>
             </div>
         </div>

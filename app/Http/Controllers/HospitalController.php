@@ -11,9 +11,10 @@ class HospitalController extends Controller
         $data = hospital::orderBy("created_at", "desc")->paginate(12);
         return view('pages.hospital.view', ["hospital" => $data]);
     }
-    public function show($id) {
+    public function show($id, Request $request) {
         $data = hospital::findOrFail($id);
-        return view('pages.hospital.id', ["hospital" => $data]);
+        $user = $request->user();
+        return view('pages.hospital.id', ["hospital" => $data,'user'=>$user]);
     }
     public function create(Request $request) {
         $states = [
@@ -43,6 +44,7 @@ class HospitalController extends Controller
             'description' => 'required|string',
             'url' => 'required|string',
             'user-name' => 'required|string',
+            'username' => 'required|string',
             'image' => 'sometimes|mimes:jpg,png,jpeg,webp,jfif|max:3000',
         ]);
 
@@ -59,7 +61,7 @@ class HospitalController extends Controller
         $hospital -> update($validated);
         return redirect()->route('hospital.show', $hospital->id)->with('success', 'Hospital updated successfully!');
     }
-    public function edit(hospital $hospital) {
+    public function edit(hospital $hospital,Request $request) {
         $states = [
             "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", 
             "Bayelsa", "Benue", "Borno", "Cross River", "Delta", 
@@ -70,11 +72,11 @@ class HospitalController extends Controller
             "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", 
             "Zamfara", "FCT"
         ];
-    
+        $user = $request->user();
         $type = ['General Hospital', 'Teaching Hospital', 'Medical Centre', 'Specialist Hospital', 'Clinic', 'Primary Healthcare Centre'];
         $prop = ['Mission', 'Private', 'State Government', 'Federal Government', 'Local Government', 'Charity'];
     
-        return view('pages.hospital.edit', compact('hospital', 'type', 'prop', 'states'));
+        return view('pages.hospital.edit', compact('hospital', 'type', 'prop', 'states','user'));
     }
     public function store(Request $request) {
         $validated = $request->validate([
@@ -88,6 +90,7 @@ class HospitalController extends Controller
             'description' => 'required|string',
             'url' => 'required|string',
             'user-name' => 'required|string',
+            'username' => 'required|string',
             'image' => 'required|mimes:jpg,png,jpeg,webp,jfif|max:3000',
         ]);
         if($request->has('image')) {

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class hospital extends Model
 {
-    protected $fillable = ['name', 'type', 'state', 'city', 'address','proprietor','director','description','url','user-name','image'];
+    protected $fillable = ['name', 'type', 'state', 'city', 'address','proprietor','director','description','url','user-name','username','image'];
     /** @use HasFactory<\Database\Factories\HospitalFactory> */
     use HasFactory;
 }

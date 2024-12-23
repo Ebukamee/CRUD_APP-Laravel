@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('manufacturer');
             $table->text('side');
             $table->string('user-name');
+            $table->string('username');
             $table->string('image')->nullable();
         });
     }

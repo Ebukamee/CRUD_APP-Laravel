@@ -27,6 +27,7 @@ class HospitalFactory extends Factory
             "description"=>fake()->realText(200),
             "url" => "https://www.google.com/maps/dir//1+Nwaeze+OjI+Cl,+GRA,+Enugu+400102,+Enugu/@6.4569195,7.418694,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x1044a3c04fdddb1d:0xd1b02423eb57db78!2m2!1d7.5010959!2d6.4569261?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
             "user-name" =>fake()->name(),
+            "username" => fake()->name(),
             "image"=>fake()->randomElement(['/man.png','/illustration-editor-desktop.svg','/illustration-editor-mobile.svg']),
         ];
     }

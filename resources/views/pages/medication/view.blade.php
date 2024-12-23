@@ -19,7 +19,7 @@
             <div class="flex justify-center gap-4 my-10 flex-wrap ">
                 @foreach($drugs as $drug)
                 <div class="card" data-aos='zoom-in'>
-                  <img src="{{asset('uploads/images/'. $drug->image)}}" alt="" class='rounded-sm aspect-square'>
+                  <img src="{{asset('uploads/images/'. $drug->image)}}" alt="{{$drug->name}}" class='rounded-sm aspect-square'>
                   <h2 class=" text-md font-semibold mt-5">{{ $drug -> name }}</h2>
                   <div class="grid">
                     <button class="teal"><a href="/medication/{{$drug->id}}">View Details</a></button>
@@ -38,7 +38,15 @@
             duration: 2000
             , once: true
         , });
-
+  document.addEventListener('DOMContentLoaded', () => {
+            const errorOverlay = document.getElementById('success-overlay');
+            if (errorOverlay) {
+                setTimeout(() => {
+                    errorOverlay.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                    setTimeout(() => errorOverlay.remove(), 500); 
+                }, 5000);
+            }
+        });
     </script>
 </body>
 </html>
