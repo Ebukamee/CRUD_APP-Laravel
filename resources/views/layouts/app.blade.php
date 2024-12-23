@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'HealthRadar') }}</title>
+    <title>{{ config('app.name', 'HealthRadar') }}</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-
-            <!-- Page Heading -->
-            @isset($header)
-                <nav class="lg:grid lg:grid-cols-6 gap-4 m-10 p-10 py-5 my-5 justify-between flex">
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="font-sans antialiased">
+    <nav class="lg:grid lg:grid-cols-6 gap-4 m-10 p-10 py-5 my-5 justify-between flex">
         <div>
             <a href="/">
                 <img src="/logo.png" alt="" class="w-20 col-span-1">
@@ -120,12 +117,25 @@
             <a href="/register"><button class="bg-[#46e0d3] rounded-3xl p-2 px-10 border border-[#46e0d3] lg:mx-5 hover">Sign Up</button></a>
         </div>
     </div>
-            @endisset
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+
+    <!-- Page Content -->
+    <main>
+        {{ $slot }}
+    </main>
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+    </script>
+</body>
 </html>
