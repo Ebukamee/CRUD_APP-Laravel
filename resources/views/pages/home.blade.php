@@ -86,7 +86,7 @@
     <title>HealthRadar</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
     
 </head>
 
@@ -98,7 +98,7 @@
             <p class="text-center text-xl m-5" data-aos="fade-up">With HealthRadar, View Healthcare centers around you and browse through various medications. You can also Join us to create a comprehensive list and bring quality healthcare closer to home</p>
             <button class="teal">Join Us</button>
             <div class="w-full h-fit grid lg:justify-items-end">
-                <img src="man.png" alt="" class="max-w-[600px] w-[100%] mb-1" data-aos="zoom-in">
+                <img src="{{ asset('/man.png') }}" alt="" class="max-w-[600px] w-[100%] mb-1" data-aos="zoom-in">
             </div>
         </div>
         <div class="m-10 p-10">
