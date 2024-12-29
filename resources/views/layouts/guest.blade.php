@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('build\assets\app-CtRVTYqc.css') }}">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -19,7 +20,7 @@
             <div>
              <div>
             <a href="/">
-                <img src="/logo.png" alt="" class="w-20 col-span-1">
+                <img src="{{asset('/logo.png')}}" alt="" class="w-20 col-span-1">
             </a>
             <h2 class="text-xl font-semibold logo mt-2">HealthRadar</h2>
         </div>

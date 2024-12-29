@@ -68,7 +68,7 @@
                     <button class="rounded-3xl p-2 border border-[2px] border-[#46e0d3] px-8 lg:mx-5 hover m-10 bg-white"><a href="{{$hospital -> url}}" class="p-0" target="_blank" >View Map</a></button>
                     
                 </div>
-                @if($user && $user->usernae == $hospital ->username)
+                @if($user && $user->username == $hospital ->username)
                     <form action="{{route('hospital.destroy',$hospital ->id)}}" method="POST" class=" m-auto w-fit">
                     @csrf
                     @method('delete')
@@ -88,6 +88,7 @@
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                 </svg>
+            </a>
         </div>
     </x-layout>
     <script>

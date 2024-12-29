@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=League+Spartan:wght@300;500;700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@600&family=Quicksand:wght@300;400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=League+Spartan:wght@300;500;700&family=Overpass:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@600&family=Quicksand:wght@300;400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary--black: black;
+    --white: transparent;
+    --secondary--yellow: #ffc600;
+    --muted--blue: #e5f1fe;
+    --primary--teal: #46e0d3;
+    --primary--royal: #0d41c0;
+    --primary--white: white;
+    --darkened--blue: #002265;
+    --black: black;
+    --secondary--red: #e40032;
+    --secondary--salmon: #ff8c91;
+    --muted--grey: #efefef;
+    --darkened--grey: #888b95;
+    --muted--salmon: #f2dadc;
+    --border-radius--small: 2rem;
+    --border-radius--extra-small: .875rem;
+    --border-radius--medium: 3rem;
+    --muted--yellow: #f7e8d1;
+    --muted--red: #efbbbb;
+    --border-radius--large: 4rem;
+    --muted--teal: #e7fffd;
+    --darkened--grey-alt: #d0d1db;
+    --darkened--teal: #00b2b1;
+    --darkened--yellow: #ec7500;
+    --darkened--red: #870c0c;
+    --darkened--salmon: #d04651;
+}
+
+/* a {
+    text-decoration: none;
+    color: orange;
+    font-family: 'Courier New', Courier, monospace;
+} */
+ .red {
+    @apply  transition bg-[#870c0c]  rounded-3xl p-2 px-8 border border-[#870c0c] mx-0 m-10 font-medium text-white hover:text-[#870c0c] hover:bg-white hover:border-[2px];
+ }
+ .teal {
+    @apply  hover:border-[#002265] transition bg-[#46e0d3]  rounded-3xl p-2 px-8 border border-[#46e0d3] mx-0 m-10 font-medium hover:text-[#0d41c0] hover:bg-white hover:border-[2px];
+ }
+ .hover {
+    @apply hover:border-[#002265] transition hover:text-[#0d41c0] hover:bg-white hover:border-[2px];
+ }
+ .input {
+    @apply p-1 px-2 border-[#f7e8d1] bg-white border outline-none w-[90%] mx-auto rounded-3xl my-3;
+ }
+ .cardsection {
+    @apply bg-white shadow-md rounded-sm w-[300px] hover:w-[320px] p-5 transition-all duration-300 ease-in-out;
+ }
+ .card {
+    @apply bg-white shadow-md rounded-sm w-[250px] hover:w-[260px] z-0 p-5 transition-all duration-300 ease-in-out;
+ }
+.logo {
+    font-family: 'Quicksand', sans-serif ;
+}
+html {
+    font-family: "DM Sans", sans-serif;
+}
+.lightred {
+    background-color:hsl(356,100%,66%) ;
+}
+.b {
+    background-image: linear-gradient(hsl(237,17%,21%),hsl(237,23%,32%));
+}
+th {
+    @apply  bg-gray-100
+}
+.footer {
+    background-color: hsl(240, 10%, 16%);
+}
+label {
+    display:block;
+}
+option {
+    @apply text-[#888b95];
+}

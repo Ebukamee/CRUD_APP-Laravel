@@ -86,7 +86,8 @@
     <title>HealthRadar</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    {{-- @vite('resources/css/app.css') --}}
+    {{-- <link rel="stylesheet" href="{{ asset('/app.css') }}"> --}}
+    @vite('resources/css/app.css')
     
 </head>
 
@@ -98,7 +99,7 @@
             <p class="text-center text-xl m-5" data-aos="fade-up">With HealthRadar, View Healthcare centers around you and browse through various medications. You can also Join us to create a comprehensive list and bring quality healthcare closer to home</p>
             <button class="teal">Join Us</button>
             <div class="w-full h-fit grid lg:justify-items-end">
-                <img src="{{ asset('/man.png') }}" alt="" class="max-w-[600px] w-[100%] mb-1" data-aos="zoom-in">
+                <img src="{{ asset('man.png') }}" alt="" class="max-w-[600px] w-[100%] mb-1" data-aos="zoom-in">
             </div>
         </div>
         <div class="m-10 p-10">
@@ -110,7 +111,7 @@
             <div class="lg:grid lg:grid-cols-6 gap-4 ">
                 <div class="bg-no-repeat bg-cover p-10 bg-[#e5f1fe] rounded-2xl lg:col-span-4 " style="background-image:url('wws.svg');"  data-aos="flip-right">
                     <div>
-                        <img src="doctor.svg" alt="">
+                        <img src="{{asset('/doctor.svg')}}" alt="">
                     </div>
                     <h2 class="my-5 text-4xl font-semibold">Our Providers</h2>
                     <p class="text-xl w-[70%] mb-[100px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, sint ab. Temporibus nemo aspernatur officia odit fuga nihil explicabo sapiente voluptas, placeat molestiae dolores animi voluptatem impedit dignissimos quod quos?</p>
@@ -118,29 +119,29 @@
                 </div>
                 <div class="lg:grid lg:grid-cols-3 gap-4 lg:col-span-2 hidden">
                     <div class="rounded-2xl border py-10 col-span-1" data-aos="zoom-out">
-                        <img src="people.svg" alt="" class="m-auto block w-20 h-20">
+                        <img src="{{asset('people.svg')}}" alt="" class="m-auto block w-20 h-20">
                         <h2 class="text-2xl transform rotate-90 font-semibold mt-24">People</h2>
                     </div>
                     <div class="rounded-2xl border py-10 col-span-1"  data-aos="zoom-in">
-                        <img src="s.svg" alt="" class="m-auto block w-20 h-20">
+                        <img src="{{asset('s.svg')}}" alt="" class="m-auto block w-20 h-20">
                         <h2 class="text-2xl transform rotate-90 font-semibold mt-24">Society</h2>
                     </div>
                     <div class="rounded-2xl border py-10 col-span-1"  data-aos="fade-down">
-                        <img src="bs.svg" alt="" class="m-auto block w-20 h-20">
+                        <img src="{{asset('bs.svg')}}" alt="" class="m-auto block w-20 h-20">
                         <h2 class="text-2xl transform rotate-90 font-semibold mt-24">Consultants</h2>
                     </div>
                 </div>
                 <div class="lg:hidden lg:mt-10">
                   <div class="rounded-2xl border p-5 flex align-center gap-10 mt-5" data-aos="zoom-out">
-                        <img src="people.svg" alt="" class="">
+                        <img src="{{asset('people.svg')}}" alt="" class="">
                         <h2 class="text-2xl  font-semibold">People</h2>
                     </div>
                     <div class="rounded-2xl border  p-5 flex align-center gap-10 mt-5"  data-aos="zoom-in">
-                        <img src="s.svg" alt="">
+                        <img src="{{asset('s.svg')}}" alt="">
                         <h2 class="text-2xl  font-semibold">Society</h2>
                     </div>
                     <div class="rounded-2xl border p-5 flex align-center gap-10 mt-5"  data-aos="fade-down">
-                        <img src="bs.svg" alt="" >
+                        <img src="{{asset('bs.svg')}}" alt="" >
                         <h2 class="text-2xl  font-semibold">Consultants</h2>
                     </div>
                 </div>

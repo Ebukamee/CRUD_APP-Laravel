@@ -3,8 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('resources/css/app.css') }}">
-    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="{{ asset('build\assets\app-CtRVTYqc.css') }}">
+    
+    {{-- @vite('resources/css/app.css') --}}
+
+    <style>
+      
+    </style>
+    
 </head>
 <body>
     <nav class="lg:grid lg:grid-cols-6 gap-4 m-10 p-10 py-5 my-5 justify-between flex">
@@ -134,7 +140,7 @@
     <footer class="grid lg:grid-cols-7 p-10 bg-[#002265] gap-20">
         <div class="col-span-3">
             <div class="mb-20">
-                <img src="/logo.png" alt="" class="w-20 col-span-1">
+                <img src="{{asset('/logo.png')}}" alt="" class="w-20 col-span-1">
                 <h2 class="text-xl font-semibold logo mt-2 text-white">HealthRadar</h2>
             </div>
             <div>
